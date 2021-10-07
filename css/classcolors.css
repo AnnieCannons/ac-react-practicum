@@ -1,0 +1,28 @@
+/* for code nested in text of slides, not code blocks */
+.aqua {
+  color: aqua;
+}
+
+/* for words that have already been introduced */
+.orange {
+  color: orange;
+}
+
+.red {
+  color: red;
+}
+
+/* for vocab words, especially new ones; answers to question fragments */
+.yellow {
+  color: yellow;
+}
+
+/* for unit parts that have already been covered */
+.green {
+  color: #00a700;
+}
+
+/* for alternating list items to heighten readability */
+.lightgreen {
+  color: #30d430;
+}

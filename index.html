@@ -4,7 +4,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-	<title>AnnieCannons slides</title>
+	<title>AnnieCannons React slides</title>
+	<link rel="icon" type="image/png" href="images/AC_Asterisk.png">
 
 	<meta name="description" content="AnnieCannons class slides">
 	<meta name="author" content="AnnieCannons">
@@ -14,6 +15,7 @@
 
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/classcolors.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -47,7 +49,7 @@
 				<h2>Projects to Complete</h2>
 				<ul>
 					<li class="fragment">Color Picker: Code pushed each Friday so you can bill for the $250 stipend</li>
-					<li class="fragment">Weather App: Completed individually during the last two weeks of class. Pay is $1000</li>
+					<li class="fragment lightgreen">Weather App: Completed individually during the last two weeks of class. Pay is $1000</li>
 					<li class="fragment">Recipe Card: to be completed as homework</li>
 				</ul>
 			</section>
@@ -55,18 +57,21 @@
 			<section>
 				<h2>Codecademy</h2>
 				<p>Please complete all free lessons found <a href="https://www.codecademy.com/learn/react-101" target="_blank">here</a> </p>
-				<img src="./images/exercise.gif" alt="Jane fonda workout GIF">
+				<div class="fragment">
+					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
+					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
+				</div> 
 			</section>
 
 			<section>
 				<h2>Overview of this course</h2>
 				<ul>
 					<li class="fragment">Learn the fundamentals of React</li>
-					<li class="fragment">Build some cool websites</li>
+					<li class="fragment lightgreen">Build some cool websites</li>
 					<li class="fragment">Focus on learning how to teach yourself</li>
-					<li class="fragment">Build even more confidence</li>
+					<li class="fragment lightgreen">Build even more confidence</li>
 					<li class="fragment">Make money</li>
-					<li class="fragment">Enter the dev shop at the $75 rate!</li>
+					<li class="fragment lightgreen">Enter the dev shop at the $75 rate!</li>
 				</ul>
 			</section>
 
@@ -74,9 +79,9 @@
 				<h2>What is React.js?</h2>
 				<ul>
 					<li class="fragment">React is a JavaScript library for building interactive UIs.</li>
-					<li class="fragment">It was created by Facebook.</li>
+					<li class="fragment lightgreen">It was created by Facebook.</li>
 					<li class="fragment">It is used by Netflix, Air Bnb, Instagram, and many, many others.</li>
-					<li class="fragment">Fast, efficient, and highly reusable code.</li>
+					<li class="fragment lightgreen">Fast, efficient, and highly reusable code.</li>
 				</ul>
 			</section>
 
@@ -85,9 +90,9 @@
 				<img src="images/react-1.svg" alt="React Logo" width="50px">
 				<ul>
 					<li class="fragment">Reusable components</li>
-					<li class="fragment">Less code</li>
+					<li class="fragment lightgreen">Less code</li>
 					<li class="fragment">Lucrative; according to ZipRecuiter, senior developers make an average of $150k/yr</li>
-					<li class="fragment">Fun!</li>
+					<li class="fragment lightgreen">Fun!</li>
 				</ul>
 			</section>
 
@@ -106,9 +111,9 @@
 				<h2>React Documentation</h2>
 				<ul>
 					<li>React docs are clean and easy to read</li>
-					<li>Please bookmark <a href="https://reactjs.org/docs/getting-started.html" target="_blank">this</a> link</li>
+					<li class="lightgreen">Please bookmark <a href="https://reactjs.org/docs/getting-started.html" target="_blank">this</a> link</li>
 					<li>Take 10 minutes and check them out. Be sure to pay attention to the way the docs are organized</li>
-					<li>What did you notice?</li>
+					<li class="lightgreen">What did you notice?</li>
 					<li>What did you like or dislike?</li>
 				</ul>
 			</section>
@@ -129,7 +134,10 @@
 				<h2>Exercise</h2>
 				<p>React Tutorial Tic Tac Toe App</p>
 				<p>Complete using the boilerplate in Codepen</p>
-				<img src="./images/exercise.gif" alt="Jane Fonda exercise GIF">
+				<div class="fragment">
+					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
+					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
+				</div> 
 			</section> -->
 
 			<!-- <section>
@@ -141,9 +149,9 @@
 				<h2>What does JS do?</h2>
 				<ul>
 					<li class="fragment">Fetches data</li>
-					<li class="fragment">Processes and calculates data</li>
+					<li class="fragment lightgreen">Processes and calculates data</li>
 					<li class="fragment">Uses the DOM API to interact with HTML (like w/jQuery)</li>
-					<li class="fragment">Reacts to events</li>
+					<li class="fragment lightgreen">Reacts to events</li>
 				</ul>
 			</section>
 
@@ -151,9 +159,9 @@
 				<h2>The React Way</h2>
 				<ul>
 					<li>Made up of individual reusable components.</li>
-					<li>Event handlers update the <a href="https://www.youtube.com/watch?v=BueFGBdlUdg" target="_blank">state</a>.</span></li>
+					<li class="lightgreen">Event handlers update the <a href="https://www.youtube.com/watch?v=BueFGBdlUdg" target="_blank">state</a>.</span></li>
 					<li><span style="color:yellow">Components</span> render and re-render as needed, based on the state.</li>
-					<li>The library takes care of DOM updates using the <span style="color:yellow">virtual DOM</span>.</li>
+					<li class="lightgreen">The library takes care of DOM updates using the <span style="color:yellow">virtual DOM</span>.</li>
 				</ul>
 			</section>
 
@@ -162,9 +170,9 @@
 				<p>In the terminal, check your versions for</p>
 				<ul>
 					<li class="fragment">Homebrew</li>
-					<li class="fragment">Node</li>
+					<li class="fragment lightgreen">Node</li>
 					<li class="fragment">NPM</li>
-					<li class="fragment">Check out <a href="https://treehouse.github.io/installation-guides/mac/node-mac.html"target="_blank">this</a> documentation</li>
+					<li class="fragment lightgreen">Check out <a href="https://treehouse.github.io/installation-guides/mac/node-mac.html"target="_blank">this documentation</a>.</li>
 				</ul>
 			</section>
 
@@ -178,8 +186,7 @@
 				<h2>Create-React-App</h2>
 				<p>The name of this project will be handle-first-react-app</p>
 				<p>If this were my project, the commands would be: </p>				
-<pre><code>
-cd documents/dev
+<pre><code>cd documents/dev
 npx create-react-app cmh-first-react-app
 cd cmh-first-react-app
 npm start
@@ -195,31 +202,80 @@ npm start
 			</section>
 
 			<section>
-				<h2>Exercise</h2>
+				<h2>Create React App Exercise</h2>
 				<p>Using the documentation and the videos, create a new react app called [your handle]-first-react-app</p>
 				<p>When you are done, take a screenshot of the folder structure in your VS Code</p>
-				<img src="./images/exercise.gif" alt="Jane Fonda exercise GIF">
+				<div class="fragment">
+					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
+					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
+				</div> 
 			</section>
 
 			<section>
 				<h2>A note on using codepen.io</h2>
-				<p class="fragment">If you haven't already, please create a free <a href="https://codepen.io/" target="_blank">codepen</a> account now</p>
-				<p class="fragment">In order to practice react, you MUST add 'react' and 'react-dom' to your project.</p>
+				<p class="fragment">Sign up for a free <a href="https://codepen.io/" target="_blank">CodePen</a> account.</p>
+				<p class="fragment">In order to practice React, you MUST add 'react' and 'react-dom' to your project.</p>
+			</section>
+
+			<section>
+				<h2>Data Flow</h2>
+				<p>In React, data flows from parent to child and then from children to grandchildren and so forth.</p>
+				<img src="images/data-flow.png" alt="parent-child data flow">
+			</section>
+
+			<section>
+				<h2>Designs Inform Engineering</h2>
+				<p>Because of parent-child data flow considerations, we must think about constructing the root directory carefully.</p>
+				<p class="fragment">Inspect the designs to inform the folder structure.</p>
+				<div class="fragment">
+					<img style="width: 200px;" src="images/header-data-flow.png" alt="Header data flow discussion">
+					<img style="width: 200px;" class="fragment" src="images/feature-data-flow.png" alt="feature data flow discussion">
+					<img style="width: 200px;" class="fragment" src="images/comment-data-flow.png" alt="comment data flow discussion">
+				</div>
+				<p class="fragment">What happens when the user clicks the "Learn More" button?</p>
+			</section>
+
+			<section>
+				<h2>Data Flow Diagram</h2>
+				<p>Based on the designs and discussion about data flow on the previous slide, consider creating a data flow diagram.</p>
+				<p>A data flow diagram is about tracking how the data is flowing.</p>
+				<img src="images/data-flow-diagram.png" alt="data flow diagram">
+			</section>
+
+			<section>
+				<h2>Engineering Analysis</h2>
+				<p>Let's visit one of the following sites to hypothesize about its directory structure.</p>
+				<ul>
+					<li><a href="https://www.airbnb.com/">Airbnb</a></li>
+					<li><a href="https://weather.com/">The Weather Channel</a></li>
+				</ul>
+				<p class="fragment">Then consider its possible data flow diagram.</p>
+			</section>
+
+			<section>
+				<h2>Data Flow Diagram Exercise</h2>
+				<p>Create a data flow diagram based on a website design.</p>
+				<p>Consider which parts of the following design will likely be dynamic.</p>
+				<img src="images/data-flow-diagram-exercise.png" alt="data flow diagram exercise">
+				<div class="fragment">
+					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
+					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
+				</div> 
 			</section>
 
 			<section>
 				<h2>Rendering React Elements</h2>
 				<ul>
-					<li class="fragment">In the past, when one thing in the UI changed, the entire page had to re-render</li>
-					<li class="fragment">With React, only the node or element that needs to change is re-rendered.</li>
+					<li class="fragment">In the past, when one thing in the UI changed, the entire page had to re-render.</li>
+					<li class="fragment lightgreen">With React, only the node or element that needs to change is re-rendered.</li>
 				</ul>
 			</section>
 
 			<section>
 				<h2>Elements vs Components</h2>
-				<p>Elements are the smallest building blocks of React apps</p>
+				<p>Elements are the smallest building blocks of React apps.</p>
 				<p>Components are made up of elements.</p>
-				<p>Let's watch <a href="https://www.youtube.com/watch?v=nI1ey-u5VeQ" target="_blank">this</a> short video</p>
+				<p>Let's watch <a href="https://www.youtube.com/watch?v=nI1ey-u5VeQ" target="_blank">this</a> short video.</p>
 			</section>
 
 			<section>
@@ -238,27 +294,26 @@ npm start
 
 			<section>
 				<h2>BUT YOU TOLD ME</h2>
-				<p class="fragment">to separate my concerns (html,css,js)!!!</p>
+				<p class="fragment">to separate my concerns (HTML,CSS,JS)!!!</p>
 				<img class="fragment" src="images/angry.gif" alt="Angry girl" width="300px">
-				<p class="fragment">Now separation of concerns is divided by components not technologies :)</p>
+				<p class="fragment">Now separation of concerns is divided by components and not technologies :)</p>
 			</section>
 
 			<section>
 				<h2>Nesting Components</h2>
 				<p>Components can be resuable as well as flow into each other.</p>
-				<p>Your <code>entry file</code> is the JS file that is the topmost component in the tree.</p>
+				<p>Your <code class="aqua">entry file</code> is the JS file that is the topmost component in the tree.</p>
 			</section>
 
 			<section>
 				<h2>A Simple Component</h2>
-<pre><code>
-import React, { Component } from 'react';
+<pre><code>import React, { Component } from 'react';
 const HelloMessage = () => {
-    return (
-      <div>
-        <h1>Hello World!</h1>
-      </div>
-    );
+  return (
+	<div>
+	<h1>Hello World!</h1>
+	</div>
+  );
 }
 export default HelloMessage
 </code></pre>
@@ -401,7 +456,10 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 				<h3>What's Wrong Here?</h3>
 				<p>Exercise</p>
 				<p>Look at <a href="https://codesandbox.io/s/whats-wrong-jsx-s17ms?file=/src/App.js">this</a> code, solve the error and add a class!</p>
-				<img src="./images/exercise.gif" alt="Jane Fonda exercise GIF">
+				<div class="fragment">
+					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
+					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
+				</div> 
 			</section>
 
 			<section>
@@ -462,7 +520,10 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 				<h2>Who's My Parent? Exercise</h2>
 				<p>Download <a href="https://github.com/cm-hart/parent-child-practice" target="_blank">this</a> code</p>
 				<p>Instructions are in the comments</p>
-				<img src="./images/exercise.gif" alt="Jane Fonda Exercise GIF">
+				<div class="fragment">
+					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
+					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
+				</div> 
 			</section>
 
 			<section>
@@ -551,7 +612,10 @@ const WelcomeText = () => {
 					<h2>Props Exercise</h2>
 					<p>Download or fork the code <a href="https://github.com/cm-hart/props-practice.git">here</a> to get started!</p>
 					<p>Instructions are in the comments.</p>
-					<img src="./images/exercise.gif" alt="Jane Fonda workout GIF">
+					<div class="fragment">
+					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
+					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
+				</div> 
 				</section>
 
 				<!-- JS Objects -->
