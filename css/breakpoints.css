@@ -1,0 +1,17 @@
+@media only screen and (min-width: 1200px) {
+  .widescreen-monitor-30 {
+    width: 30vw;
+  }
+  .widescreen-monitor-45 {
+    width: 50vw;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .widescreen-monitor-30 {
+    width: 20vw;
+  }
+  .widescreen-monitor-45 {
+    width: 35vw;
+  }
+}
