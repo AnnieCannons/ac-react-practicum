@@ -16,6 +16,7 @@
 	<!-- Theme used for syntax highlighting of code -->
 	<link rel="stylesheet" href="lib/css/zenburn.css">
 	<link rel="stylesheet" href="css/classcolors.css">
+	<link rel="stylesheet" href="css/breakpoints.css">
 
 	<!-- Printing and PDF exports -->
 	<script>
@@ -48,9 +49,9 @@
 			<section>
 				<h2>Projects to Complete</h2>
 				<ul>
-					<li class="fragment">Color Picker: Code pushed each Friday so you can bill for the $250 stipend</li>
+					<!-- <li class="fragment">Color Picker: Code pushed each Friday so you can bill for the $250 stipend</li>
 					<li class="fragment lightgreen">Weather App: Completed individually during the last two weeks of class. Pay is $1000</li>
-					<li class="fragment">Recipe Card: to be completed as homework</li>
+					<li class="fragment">Recipe Card: to be completed as homework</li> -->
 				</ul>
 			</section>
 
@@ -71,7 +72,7 @@
 					<li class="fragment">Focus on learning how to teach yourself</li>
 					<li class="fragment lightgreen">Build even more confidence</li>
 					<li class="fragment">Make money</li>
-					<li class="fragment lightgreen">Enter the dev shop at the $75 rate!</li>
+					<!-- <li class="fragment lightgreen">Enter the dev shop at the $75 rate!</li> -->
 				</ul>
 			</section>
 
@@ -203,7 +204,7 @@ npm start
 
 			<section>
 				<h2>Create React App Exercise</h2>
-				<p>Using the documentation and the videos, create a new react app called [your handle]-first-react-app</p>
+				<p>Using the documentation and/or the slides, create a new react app called [your handle]-first-react-app</p>
 				<p>When you are done, take a screenshot of the folder structure in your VS Code</p>
 				<div class="fragment">
 					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
@@ -218,21 +219,133 @@ npm start
 			</section>
 
 			<section>
-				<h2>Data Flow</h2>
-				<p>In React, data flows from parent to child and then from children to grandchildren and so forth.</p>
-				<img src="images/data-flow.png" alt="parent-child data flow">
+				<h2>Components</h2>
 			</section>
 
 			<section>
-				<h2>Designs Inform Engineering</h2>
-				<p>Because of parent-child data flow considerations, we must think about constructing the root directory carefully.</p>
-				<p class="fragment">Inspect the designs to inform the folder structure.</p>
+				<h2>Rendering React Elements</h2>
+				<ul>
+					<li class="fragment">In the past, when one thing in the UI changed, the entire page had to re-render.</li>
+					<li class="fragment lightgreen">With React, only the node or element that needs to change is re-rendered.</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>Elements vs Components</h2>
+				<p>Elements are the smallest building blocks of React apps.</p>
+				<p>Components are made up of elements.</p>
+				<!-- <p>Let's watch <a href="https://www.youtube.com/watch?v=nI1ey-u5VeQ" target="_blank">this</a> short video.</p> -->
+			</section>
+
+			<section>
+				<h2>Components</h2>
+				<ul>
+					<li>A self-contained and reusable bit of code</li>
+					<li>One piece of a UI</li>
+				</ul>
+				<img src="images/component.png" alt="Website Components">
+			</section>
+
+			<section>
+				<h2>Component Based Architecture</h2>
+				<img src="images/component2.png" alt="Website Component System">
+				<div class="widescreen-monitor-30" style="float: right;">
+					<p><b>Product Menu</b> contains <span class="orange">Search Product</span>, which has two child components:</p>
+					<ul>
+						<li><span style="color: rgb(107, 107, 211)">Search Product Field</span></li>
+						<li><span class="lightgreen">Product Price Listing</span>, which contains:
+							<ul>
+								<li><span class="aqua">Product Category</span></li>
+								<li><span class="red">Product Price</span></li>
+							</ul>
+						</li>
+					</ul></p>
+				</div>
+			</section>
+
+			<section>
+				<h2>BUT YOU TOLD ME</h2>
+				<p class="fragment">to separate my concerns (HTML,CSS,JS)!!!</p>
+				<img class="fragment" src="images/angry.gif" alt="Angry girl" width="300px">
+				<p class="fragment">Now separation of concerns is divided by components and not technologies :)</p>
+			</section>
+
+			<section>
+				<h2>Designs Inform Architecture</h2>
+				<p>Use the designs to identify components, data, pages, and resulting directory structure.<br>Your React <span class="aqua">src</span> folder will likely have these folders:</p>
+				<img style="width: 10vw;" src="images/src-folder.png" alt="React src folder contents">
+				<div class="widescreen-monitor-45" style="float: right;">
+					<ul>
+						<li><b>Assets</b> - logo, images, icons</li>
+						<li class="lightgreen"><b>Components</b> - cards, tables, etc.</li>
+						<li><b>Data</b> - static information</li>
+						<li class="lightgreen"><b>Forms</b> - user-generated data requests</li>
+						<li><b>Lib</b> - library</li>
+						<li class="lightgreen"><b>Pages</b> - a folder for each page of design</li>
+					</ul>
+				</div>
+			</section>
+
+			<section>
+				<h2>Pages Folder Architecture</h2>
+				<p>Within the <b>src</b> folder in <b>Pages</b>, each folder contains at least:</p>
+				<img style="width: 10vw;" src="images/pages-folder.png" alt="React Pages folder contents">
+				<ul class="widescreen-monitor-45" style="float:right;">
+					<li>one JS file named after the page contents (e.g., <b>Admin</b> folder has an <span class="aqua">Admin.js</span> file)</li>
+					<li class="lightgreen">possibly another folder<span class="red">*</span> of files, pending the dynamic data to display to the user.
+					<br><span style="font-size: 26px"><span class="red">*</span>Example: <span class="aqua">Graphs</span>, <span class="aqua">Tables</span>, etc. folders with own files/folders.</span></li>
+				</ul>
+				<aside class="notes">Note: The above architecture will continue to evolve during development and with subsequent project iterations.</aside>
+			</section>
+
+			<section>
+				<h2>Project Architecture Practice</h2>
+				<p>Inspect the designs to identify components and the possible folder structure.</p>
+				<div>
+					<img style="width: 200px;" src="images/header-data-flow.png" alt="Home page architecture discussion">
+					<img style="width: 200px;" src="images/feature-data-flow.png" alt="feature page architecture discussion">
+					<img style="width: 200px;" src="images/comment-data-flow.png" alt="comment architecture discussion">
+				</div>
+			</section>
+
+			<section>
+				<h2>Dynamic Data</h2>
+				<p>React is great for web applications that display dynamic data.</p>
+				<p><span class="yellow">Dynamic data</span> is data that changes based upon user input.</p>
+				<p>User input can be a click, a scroll, a mouse hover, etc.</p>
+				<h3>Takeaway</h3>
+				<p>Only the particular part of the site, not the whole site, the user interacts with is re-rendered with the dynamic data!</p>
+			</section>
+
+			<section>
+				<h2>Dynamic Data in Designs</h2>
+				<p>Front end engineers often get a list of API calls from the backend engineers, endpoints that exist in an application.</p>
+				<ul>Then the front end engineer must choose:
+					<li>where these API calls should take place in the code</li>
+					<li>how once the requested data should flow to the remaining components</li>
+				</ul>
+				<p>Examples of functions to get data in the code: <span class="aqua">getUserProfileData</span>, <span class="aqua">getDiscussionForumData</span>, etc.</p>
+				<aside class="notes">Sometimes, the front end engineer may need to let backend engineers know what API calls are needed.</aside>
+			</section>
+
+			<section>
+				<h2>Data Flow</h2>
+				<p>In React, data flows from parent to child and then from children to grandchildren and so forth.</p>
+				<p>So data from an API call is best passed into the parent component to flow to its children, then to grandchildren.</p>
+				<img width="600" src="images/data-flow.jpg" alt="parent-child data flow">
+			</section>
+
+			<section>
+				<h2>Designs Inform Data Flow Diagrams</h2>
+				<p>Because of parent-child data flow considerations, we must think about constructing the data flow diagram carefully.</p>
+				<p class="fragment">Inspect the designs to extract the data flow for Features. Assume Comments is for a particle Feature Article.</p>
 				<div class="fragment">
 					<img style="width: 200px;" src="images/header-data-flow.png" alt="Header data flow discussion">
 					<img style="width: 200px;" class="fragment" src="images/feature-data-flow.png" alt="feature data flow discussion">
 					<img style="width: 200px;" class="fragment" src="images/comment-data-flow.png" alt="comment data flow discussion">
 				</div>
-				<p class="fragment">What happens when the user clicks the "Learn More" button?</p>
+				<!-- <p class="fragment">What happens when the user clicks the "Learn More" button?</p> -->
+				<aside class="notes">Features section on main page is the parent component that receives data from an API call. The data consists of all feature topics, articles within each topic, comments within each article. The Feature Topics Wrapper is the parent that passes data to each component in it on that page. Feature Topics is a collection with 3 objects. Each Feature Topic component is passing data into each Feature Article component. Then each Feature Article component is passing data into the Comments component.</aside>
 			</section>
 
 			<section>
@@ -240,6 +353,7 @@ npm start
 				<p>Based on the designs and discussion about data flow on the previous slide, consider creating a data flow diagram.</p>
 				<p>A data flow diagram is about tracking how the data is flowing.</p>
 				<img src="images/data-flow-diagram.png" alt="data flow diagram">
+				<aside class="notes">Features section on main page is the parent component that receives data from an API call. The data consists of all feature topics, articles within each topic, comments within each article. The Feature Topics Wrapper is the parent that passes data to each component in it on that page. Feature Topics is a collection with 3 objects. Each Feature Topic component is passing data into each Feature Article component. Then each Feature Article component is passing data into the Comments component.</aside>
 			</section>
 
 			<section>
@@ -263,41 +377,6 @@ npm start
 				</div> 
 			</section>
 
-			<section>
-				<h2>Rendering React Elements</h2>
-				<ul>
-					<li class="fragment">In the past, when one thing in the UI changed, the entire page had to re-render.</li>
-					<li class="fragment lightgreen">With React, only the node or element that needs to change is re-rendered.</li>
-				</ul>
-			</section>
-
-			<section>
-				<h2>Elements vs Components</h2>
-				<p>Elements are the smallest building blocks of React apps.</p>
-				<p>Components are made up of elements.</p>
-				<p>Let's watch <a href="https://www.youtube.com/watch?v=nI1ey-u5VeQ" target="_blank">this</a> short video.</p>
-			</section>
-
-			<section>
-				<h2>Components</h2>
-				<ul>
-					<li>A self-contained and reusable bit of code</li>
-					<li>One piece of a UI</li>
-				</ul>
-				<img src="images/component.png" alt="Website Components">
-			</section>
-
-			<section>
-				<h2>Component Based Architecture</h2>
-				<img src="images/component2.png" alt="Website Component System">
-			</section>
-
-			<section>
-				<h2>BUT YOU TOLD ME</h2>
-				<p class="fragment">to separate my concerns (HTML,CSS,JS)!!!</p>
-				<img class="fragment" src="images/angry.gif" alt="Angry girl" width="300px">
-				<p class="fragment">Now separation of concerns is divided by components and not technologies :)</p>
-			</section>
 
 			<section>
 				<h2>Nesting Components</h2>
@@ -325,6 +404,8 @@ export default HelloMessage
 				<p class="fragment">The render() function creates the UI</p>
 				<p class="fragment">Other parts of the component interact with the data, add the styles (CSS), etc.</p>
 			</section>
+
+			
 
 			<!-- Concepts: JSX -->
 			<section>
