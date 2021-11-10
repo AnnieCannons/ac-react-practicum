@@ -38,7 +38,7 @@
 			<section>
 				<h2>Welcome!</h2>
 				<p>Please take a moment to reflect on the incredible amount of work you have accomplished over the past year!</p>
-				<iframe src="https://giphy.com/embed/IdwsB40BCSc2RAmwOH" width="423" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/memecandy-IdwsB40BCSc2RAmwOH"></a></p>
+				<iframe src="https://giphy.com/embed/IdwsB40BCSc2RAmwOH" width="423" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></p>
 			</section>
 
 			<section>
@@ -338,14 +338,14 @@ npm start
 			<section>
 				<h2>Designs Inform Data Flow Diagrams</h2>
 				<p>Because of parent-child data flow considerations, we must think about constructing the data flow diagram carefully.</p>
-				<p class="fragment">Inspect the designs to extract the data flow for Features. Assume Comments is for a particle Feature Article.</p>
+				<p class="fragment">Inspect the designs to extract the data flow for Features. Assume Comments is for a particular Feature Article.</p>
 				<div class="fragment">
 					<img style="width: 200px;" src="images/header-data-flow.png" alt="Header data flow discussion">
 					<img style="width: 200px;" class="fragment" src="images/feature-data-flow.png" alt="feature data flow discussion">
 					<img style="width: 200px;" class="fragment" src="images/comment-data-flow.png" alt="comment data flow discussion">
 				</div>
 				<!-- <p class="fragment">What happens when the user clicks the "Learn More" button?</p> -->
-				<aside class="notes">Features section on main page is the parent component that receives data from an API call. The data consists of all feature topics, articles within each topic, comments within each article. The Feature Topics Wrapper is the parent that passes data to each component in it on that page. Feature Topics is a collection with 3 objects. Each Feature Topic component is passing data into each Feature Article component. Then each Feature Article component is passing data into the Comments component.</aside>
+				<aside class="notes">Features section on main page is the parent component that receives data from an API call. The data consists of all feature topics, articles within each topic, comments within each article. The Feature Topics Wrapper is the parent that passes data to each component in it on that page. Feature Topics is a collection with 3 objects. Each Feature Topic component is passing data into each Feature Article component as well as into that Feature Article's Comments section.</aside>
 			</section>
 
 			<section>
@@ -360,8 +360,8 @@ npm start
 				<h2>Engineering Analysis</h2>
 				<p>Let's visit one of the following sites to hypothesize about its directory structure.</p>
 				<ul>
-					<li><a href="https://www.airbnb.com/">Airbnb</a></li>
-					<li><a href="https://weather.com/">The Weather Channel</a></li>
+					<li><a href="https://www.airbnb.com/" target="_blank">Airbnb</a></li>
+					<li><a href="https://weather.com/" target="_blank">The Weather Channel</a></li>
 				</ul>
 				<p class="fragment">Then consider its possible data flow diagram.</p>
 			</section>
@@ -426,7 +426,7 @@ export default HelloMessage
 					<li class="fragment">A short-hand language that lets you create JavaScript objects using an HTML-like syntax.</li>
 					<li class="fragment">Generates JavaScript objects by matching HTML element names to components.</li>
 				</ul>
-				<p class="fragment">Check out <a href="https://babeljs.io/"target="_blank">Babel</a> to see it in action!</p>
+				<p class="fragment">Check out <a href="https://babeljs.io/" target="_blank">Babel</a> to see it in action!</p>
 			</section>
 
 			<section>
@@ -483,7 +483,7 @@ export default HelloMessage
 
 			<section>
 				<h2>More on the virtual DOM</h2>
-				<a href="https://evilmartians.com/chronicles/optimizing-react-virtual-dom-explained">click here</a>
+				<a href="https://evilmartians.com/chronicles/optimizing-react-virtual-dom-explained " target="_blank">click here</a>
 			</section>
 
 			
@@ -530,7 +530,7 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 			<section>
 				<h3>What's Wrong Here?</h3>
 				<p>Exercise</p>
-				<p>Look at <a href="https://codesandbox.io/s/whats-wrong-jsx-s17ms?file=/src/App.js">this</a> code, solve the error and add a class!</p>
+				<p>Look at <a href="https://codesandbox.io/s/whats-wrong-jsx-s17ms?file=/src/App.js" target="_blank">this</a> code, solve the error and add a class!</p>
 				<div class="fragment">
 					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
 					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
@@ -560,6 +560,100 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 				<h2>JSX Project</h2>
 			</section>
 
+			<section>
+				<h2>Styling Components</h2>
+				<p>Similar to website development projects, CSS can also be applied to React applications in three ways:</p>
+				<ul>
+					<li>Externally</li>
+					<li>Internally</li>
+					<li>Inline</li>
+				</ul>
+			</section>
+
+			<section>
+				<h2>External CSS in React</h2>
+				<p>In general, external CSS files are siblings of their respective JS files in the directory.</p>
+				<p>Example: <code class="aqua">App.css</code> is a sibling of <code class="aqua">App.js</code></p>
+				<div class="fragment">
+					<p>So to import an external CSS file into a JS file:</p>
+<pre><code class="javascript">//In the App.js file:
+import "./App.css";
+</code></pre>		
+				</div>
+				<p class="fragment">External CSS is great for the overall styling of parent pages housing reusable components.</p>		
+			</section>
+
+			<section>
+				<h2>Internal CSS in React</h2>
+				<p>Internal CSS groups behavior (JS) with markup (JSX) and styling (CSS), which is quite helpful for child components. React component libraries help to apply such styles.</p>
+				<div class="fragment">
+				<p>Example: Material UI library has a <code class="aqua">makeStyles</code> method.</p>
+<pre><code class="javascript">import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: "flex"
+  }
+}));
+</code></pre>			
+				</div>
+				<p class="fragment">Importing the method and applying the styles is the first step. Next, we must apply the styling to the JSX.</p>
+			</section>
+
+			<section>
+				<h2>Internal CSS in React</h2>
+				<p>After importing and declaring the styles to be used in a component, the next step is to apply the styling to the markup via the <code class="aqua">export</code> and <code class="aqua">return</code>.</p>
+<pre class="fragment"><code class="javascript">export default function [name of function](parameter(s)) {
+  const classes = useStyles();
+}
+
+return (
+  &lt;div className={classes.root}>
+    &lt;h1>JSX (markup)&lt;/h1>
+  &lt;/div>
+)
+</code></pre>			
+				<p class="fragment">Internal CSS is great for component-scoped styling in child components. So when a component breaks, we can easily find and debug its accompanying markup, styling, and behavior.</p>
+				<aside class="notes">Note the use of className attribute in the JSX element. CSS classes are generally better for performance than inline styles, which we'll cover in the next slide.</aside>
+			</section>
+
+			<section>
+				<h2>Inline CSS in React</h2>
+				<p>Inline CSS applies styling to a specified JSX element.</p>
+<pre class="fragment"><code class="javascript">//for a to do list:
+function getList({item, isDone}) {
+  return (
+    &lt;div>
+      &lt;p style={{ color: isDone ? "green" : "red" }}>{item}&lt;/p>
+    &lt;/div>
+  )
+}
+</code></pre>
+				<p class="fragment">Inline CSS can be used for a nonreusable component or element.</p>
+				<aside class="notes">Notice the paragraph element. In JSX, we use {} to assign the value to an attribute. We then need to pass an object into the curly braces.</aside>
+			</section>
+
+			<section>
+				<h2>CSS in React</h2>
+				<p>Although other tools exist to apply styling in React applications, the general rule is:</p>
+				<ul>
+					<li>External CSS applies overall styles for parent pages or components.</li>
+					<li>Internal CSS overrides external CSS and is best for reusable component-scoped styling.</li>
+					<li>Inline CSS overrides all other CSS properties and hinders performance. Use sparingly.</li>
+				</ul>
+				<aside class="notes">CSS classes are generally better for performance. So strive to code with reusability in mind.</aside>
+			</section>
+
+			<section>
+				<h2>Debugging</h2>
+				<p><code class="aqua">console.log()</code> is a great tool for debugging!</p>
+				<ul>
+					<li>Is a function running the way we coded it to run?</li>
+					<li>How does the data structure change as the program runs?</li>
+					<li>Which function last executed before the UI broke?</li>
+				</ul>
+			</section>
+
 				<!-- Dynamic Components -->
 			<section>
 				<h2>Dynamic Components</h2>
@@ -569,20 +663,21 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 
 			<section>
 				<h2>Props!</h2>
-				<p>A system for passing data between components, usally from parent to child</p>
+				<p>A system for passing data between components, usually from parent to child.</p>
+				<p><code class="aqua">console.log()</code> is great for checking data structure of props passed between components!</p>
 			</section>
 
-			<section>
+			<!-- <section>
 				<h2>Props</h2>
-				<p>Let's watch <a href="https://www.youtube.com/watch?v=eXQRhVUMCP8" target="_blank">this</a> video</p>
-			</section>
+				<p>Let's watch <a href="https://youtu.be/eXQRhVUMCP8?t=15" target="_blank">this</a> video</p>
+			</section> -->
 
 			<section>
 				<h2>Parent vs Child Components</h2>
 				<ul>
-					<li class="fragment">In HTML and vanilla JavaScript, nesting is how we determine the generational relationship</li>
-					<li class="fragment">In React, we look to where components are imported to determine the parent-child relationship</li>
-					<li class="fragment">When one component is imported into another, the imported child component  must render somewhere inside of the parent component.</li>
+					<li class="fragment">In HTML and vanilla JavaScript, nesting is how we determine the generational relationship.</li>
+					<li class="fragment">In React, we look to where components are imported to determine the parent-child relationship.</li>
+					<li class="fragment">When one component is imported into another, the imported child component must render somewhere inside of the parent component.</li>
 				</ul>
 			</section>
 
@@ -604,44 +699,42 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 			<section>
 				<h2>Props</h2>
 				<p>A property of a component that does not change. It is generally "passed down" from a parent component.</p>
-<pre><code>
-import React, { Component } from 'react';
-class HelloMessage extends Component {
-  render() {
-    return (
-      <div>
-        <h1>Hello {this.props.name}!</h1>
-      </div>
-    );
-  }
+<pre><code class="jsx">import React from 'react';
+const HelloMessage = (props) => { 
+  return (
+    <div>
+      <h1>Hello {props.name}!</h1>
+    </div>
+  );
 }
-export default HelloMessage
+export default HelloMessage;
 </code></pre>
+					<p><code class="aqua">HelloMessage</code> is a child component receiving props from a parent.</p>
+					<aside class="notes">props are usually an object. it's helpful to console.log() the props to see the structure of the data.</aside>
 				</section>
 
 				<section>
 					<h2>Props</h2>
-<pre><code class="jsx">
-import React, { Component } from 'react';
-import HelloMessage from './hellomessage'
-class App extends Component {
-  render() {
-    return (
-      <div>
-        &lt;HelloMessage name="Coach" /&gt;
-	  </div>
-    );
-  }
+<pre><code class="jsx">import React from 'react';
+import HelloMessage from './hellomessage';
+const App = () => {
+  return (
+    <div>
+      &lt;HelloMessage name="Coach" /&gt;
+    </div>
+  );
 }
-export default App
+export default App;
 </code></pre>
+					<p><code class="aqua">App</code> is the parent component importing the <code class="aqua">HelloMessage</code> child component.</p>
+					<aside class="notes">props is an object that has a key of name and a value of "Coach"</aside>
 				</section>
 
 				<section>
 					<h2>Making Components Dynamic</h2>
 					<ul>
-						<li>Components use &lsquo;props&rsquo; or properties for dynamic bits of data and functionality.</li>
-						<li>Props are expressed with the same syntax as HTML attributes, i.e. <code class="inline">name={someValue}</code></li>
+						<li>Components use &lsquo;<code class="aqua">props</code>&rsquo; or properties for dynamic bits of data and functionality.</li>
+						<li>Props use the same syntax as HTML attributes, i.e. <code class="inline aqua">nameOfProp={valueOfProp}</code></li>
 						<li>A prop can be set to any JS value
 							<ul>
 								<li>String, Array, Object, Function, etc.</li>
@@ -649,21 +742,19 @@ export default App
 							</ul>
 						</li>
 					</ul>
+					<p>You can <code class="aqua">console.log(props)</code> to view its data structure!</p>
 				</section>
 
 				<section>
 					<h2>Another props example</h2>
-<pre><code class="javascript">
-// WelcomeText accepts the prop 'name'
+<pre><code class="javascript">// WelcomeText accepts the prop 'name'
 &lt;WelcomeText name={'Adam'} />
 	
 // WelcomeText component
-const WelcomeText = () => {
-  render (){
-   return (
+const WelcomeText = (props) => {
+  return (
     &lt;p>Welcome to the class, {props.name}!&lt;/p>
-   );
-  }
+  );
 };
 
 // will output
@@ -674,7 +765,7 @@ const WelcomeText = () => {
 
 				<section>
 					<h2>Props</h2>
-					<p>Props are <span style="color: turquoise;">declared</span> on the parent component you want to pass them into, and then are passed through function args in the child component</p>
+					<p>Props are <span style="color: turquoise;">declared</span> on the parent component you want to pass them into, and then are passed through function arguments in the child component.</p>
 				</section>
 
 				<section>
@@ -685,12 +776,19 @@ const WelcomeText = () => {
 
 				<section>
 					<h2>Props Exercise</h2>
-					<p>Download or fork the code <a href="https://github.com/cm-hart/props-practice.git">here</a> to get started!</p>
+					<p>Download or fork the code <a href="https://github.com/cm-hart/props-practice.git" target="_blank">here</a> to get started!</p>
 					<p>Instructions are in the comments.</p>
 					<div class="fragment">
 					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
 					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
 				</div> 
+				</section>
+
+				<section>
+					<h2>Starter Data as Props</h2>
+					<p>Front end engineers might need to build out parts of the web application before backend engineers build out their code.</p>
+					<p>So it is helpful to create and work with starter data.</p>
+					<p>Since data travels across the internet as JSON, let's review objects.</p>
 				</section>
 
 				<!-- JS Objects -->
@@ -728,32 +826,29 @@ const WelcomeText = () => {
 				<section>
 					<h2>How to make an object</h2>
 					<p>With an object literal:</p>
-<pre><code class="javascript">
-var contact0 = {
+<pre><code class="javascript">var contact0 = {
   firstName: 'Simba',
   lastName: 'The Lion',
   organization: 'Pride Rock'
 };</code></pre>
 					<p>Adding properties:</p>
-<pre><code class="javascript">
-  var contact1 = {};
-  contact1.firstName = 'Pumba';
-  contact1.lastName = 'The Warthog';
-  contact1['organization'] = 'The Desert';
+<pre><code class="javascript">var contact1 = {};
+contact1.firstName = 'Pumba';
+contact1.lastName = 'The Warthog';
+contact1['organization'] = 'The Desert';
 </code></pre>	
 				</section>
 
 				<section>
 					<h2>How to make an object</h2>
 					<p>Objects can be nested:</p>
-<pre><code class="javascript">
-var contact2 = {
+<pre><code class="javascript">var contact2 = {
   firstName = 'Ariel', 
   lastName = 'The Mermaid',
   organization: {
     name: 'Disney',
-    website: 'http://disney.com'
-	}
+    website: 'https://disney.com'
+  }
 };</code></pre>
 				</section>
 
@@ -762,13 +857,11 @@ var contact2 = {
 					<h2>Accessing properties of objects</h2>
 					<p>Two ways:</p>
 					<p>With dot notation:</p>
-<pre><code class="javascript">
-contact0.firstName;
+<pre><code class="javascript">contact0.firstName;
 contact1.lastName;
 </code></pre>
 					<p>With square bracket notation:</p>
-<pre><code class="javascript">
-contact0['firstName'];
+<pre><code class="javascript">contact0['firstName'];
 contact2['lastName'];
 </code></pre>
 				</section>
@@ -778,8 +871,7 @@ contact2['lastName'];
 					<h2>Maps and Key/Values</h2>
 					<p>An object is often used as a <span class="blue">map</span>, or a key/value store.</p>
 					<p>These are data structures that are indexed by <span class="blue">keys</span>.</p>
-<pre><code class="javascript">
-var appData = {
+<pre><code class="javascript">var appData = {
   users: [{
     name: 'Rihanna',
     id: 2
@@ -799,9 +891,16 @@ var appData = {
 				</section>
 
 				<section>
+					<h2>Starter Data Exercise</h2>
+					<p>Imagine the data structure for the employee page below. How many key/value pairs per employee object?</p>
+					<p class="fragment">In an <code class="aqua">employeeData.js</code> file, create data for 3+ employees!</p>
+					<img src="./images/data-structure-practice.png" alt="Employee Page Data Structure Practice">
+				</section>
+
+				<section>
 					<h2>Using <code style="color: turquoise;">.map()</code> in React </h2>
-					<p>Take some time to read through the <a href="https://reactjs.org/docs/lists-and-keys.html">documentation</a> </p>
-					<p>Examine the Codepens</p>
+					<p>Take some time to read through the <a href="https://reactjs.org/docs/lists-and-keys.html" target="_blank">documentation</a> </p>
+					<p>Examine the CodePens</p>
 					<p>We will discuss after!</p>
 				</section>
 
@@ -812,21 +911,20 @@ var appData = {
 
 				<section>
 					<h2>Using maps</h2>
-<pre><code>
-const WelcomeIndividual = () => {
-    return (
-      &lt;li>Hi there {this.props.name}&lt;/li&gt;
-	)
+<pre><code class="javascript">const WelcomeIndividual = () => {
+  return (
+    &lt;li>Hi there {this.props.name}&lt;/li&gt;
+  )
 };
 const WelcomeList = () => {
-	const nameArray = ['Harrison', 'Adam', 'Laura'];
-	return (
-		&lt;div&gt;
-			{nameArray.map((item, id) => 
-			&lt;WelcomeIndividual name={item} key={id} /&gt;
-			)}
-		&lt;/div&gt;
-	)
+const nameArray = ['Harrison', 'Adam', 'Laura'];
+  return (
+    &lt;div&gt;
+      {nameArray.map((item, id) => 
+        &lt;WelcomeIndividual name={item} key={id} /&gt;
+      )}
+    &lt;/div&gt;
+  )
 };
 </code></pre>
 				</section>
@@ -834,29 +932,28 @@ const WelcomeList = () => {
 				<section>
 					<h2>Maps</h2>
 					<p>map() iterates over a list, transforms each member of that list, and returns another list of the same size with the transformed members (example: transforming list of strings to uppercase)</p>
-<pre><code>
+<pre><code class="javascript">
 var array1 = [1, 4, 9, 16];
 // pass a function to map
 const map1 = array1.map(x => x * 2);		
 console.log(map1);
 // expected output: Array [2, 8, 18, 32]	
 </code></pre>
-					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map">Helpful MDN</a>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">Helpful MDN</a>
 				</section>
 
 				<section>
-					<h2>forEach</h2>
+					<h2>forEach()</h2>
 					<p>forEach() iterates over a list and applies some operation with side effects to each list member (example: saving every list item to the database)</p>
-<pre><code>
-var words = [{name:'one'}, {name:'two'}, {name: 'three'}, {name:'four'}];
+<pre><code class="javascript">var words = [{name:'one'}, {name:'two'}, {name:'three'}, {name:'four'}];
 
 words.forEach(function(word) {
   word.name = "bananas";
 })
 
-console.log(words)
+console.log(words);
 </code></pre>
-					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">Helpful MDN</a>
+					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank">Helpful MDN</a>
 				</section>
 
 				 <!-- Methods and 'this' 
@@ -887,11 +984,10 @@ console.log(currentUser.mI()); // logs 'J'
 				<!-- React props are objects -->
 				<section>
 					<h2>React props === objects</h2>
-<pre><code class="javascript">
-const Welcome = () => {
-    return (
-      &lt;p>Welcome {this.props.firstName} {this.props.lastName}!&lt;/p>
-    );
+<pre><code class="javascript">const Welcome = (props) => {
+  return (
+    &lt;p>Welcome {props.firstName} {props.lastName}!&lt;/p>
+  );
 };
 
 // We pass the props like this
@@ -917,9 +1013,9 @@ const Welcome = () => {
 						<li>Make the component dynamic:
 							<ul>
 								<li>Identify what props the component needs.</li>
-								<li>Change the <code class="inline">UserProfile</code> function so it accepts props</li>
+								<li>Change the <code class="inline aqua">UserProfile</code> function so it accepts props</li>
 								<li>Add dynamic values to the JSX</li>
-								<li>Pass props to the <code class="inline">UserProfile</code> component</li>
+								<li>Pass props to the <code class="inline aqua">UserProfile</code> component</li>
 							</ul>
 						</li>
 					</ul>
@@ -934,9 +1030,16 @@ const Welcome = () => {
 						<li>class syntax</li>
 						<li>arrow functions</li>
 					</ul>
-					<a href="https://docs.google.com/presentation/d/1ayo6JgXGZ-dfClAwhJxSN1PM11fJG6G6O32XwE5Tokg/edit?usp=sharing">Let's check this out!</a>
+					<a href="https://docs.google.com/presentation/d/1ayo6JgXGZ-dfClAwhJxSN1PM11fJG6G6O32XwE5Tokg/edit?usp=sharing" target="_blank">Let's check this out!</a>
 				</section>
 	
+				<section>
+					<h2>Employee Page Props Exercise</h2>
+					<p>Use the data structure in your <code class="aqua">employeeData.js</code> file to make an App that maps through the data to display in the UI!</p>
+					<p>Remember to pass props from parent to child.</p>
+					<img src="./images/data-structure-practice.png" alt="Employee Page Data Structure Practice">
+				</section>
+
 				<section>
 					<h3>Hooks</h3>
 				</section>
@@ -955,8 +1058,7 @@ const Welcome = () => {
 						<li class="fragment">A JavaScript object</li>
 						<li class="fragment">A set of key/value pairs that represents the current state of the application.</li>
 					</ul>
-<pre class="fragment"><code class="javascript">
-var me = {
+<pre class="fragment"><code class="javascript">var me = {
   mood: 'happy',
   age: 42,
   sleeping: false
@@ -971,8 +1073,28 @@ var me = {
 
 				<section>
 					<h2>Let's see it in code:</h2>
-<pre><code class="javascript">
-render() {
+<pre><code class="javascript">const StateOfMatter = (props) => {
+  var stateOfMatter;
+  if (props.currentTemp <= 32) {
+    stateOfMatter = 'Solid';
+  } else if (props.currentTemp >= 212) {
+    stateOfMatter = 'Gas';
+  } else {
+    stateOfMatter = 'Liquid';
+  }
+  return (
+   <div>
+    <p>At {props.currentTemp }°F, water is considered to be a 
+       { stateOfMatter } state of matter.</p>
+   </div>
+  );
+}
+</code></pre>
+				</section>
+
+				<!-- <section>
+					<h2>Let's see it in code:</h2>
+<pre><code class="javascript">render() {
   var stateOfMatter;
   if (this.state.currentTemp <= 32) {
     stateOfMatter = 'Solid';
@@ -994,8 +1116,7 @@ render() {
 				<section>
 					<h2>Where is state stored?</h2>
 					<p>Local state is stored in the component itself! In something call the constructor. It is outside of the render function.</p>
-<pre><code class="javascript">
-import React from 'react';
+<pre><code class="javascript">import React from 'react';
 class Temperature extends React.Component{
   constructor(){
    super();
@@ -1008,9 +1129,108 @@ class Temperature extends React.Component{
   }
 }
 </code></pre>
+				</section> -->
+
+				<section>
+					<h2>Where is state stored?</h2>
+					<p>Local state is stored in the component itself! In something call the constructor. It is outside of the render function.</p>
+<pre><code class="javascript">import React, { useState } from 'react';
+const Temperature = (props) => {
+  const [currentTemp,setCurrentTemp] = useState(props.currentTemp);
+}
+export default Temperature;
+</code></pre>
+					<p><code class="aqua">useState()</code> is a React Hook that allows us to declare an initial state (<code class="aqua">props.currentTemp</code>) and store the value to a variable (<code class="aqua">currentTemp</code>) with an option to call a function (<code class="aqua">setCurrentTemp</code>) to update the value in state.</p>
 				</section>
 
 				<section>
+					<h2>How to set the State?</h2>
+					<p>Setting the state means updating the value in state based on user input or the data your app is receiving from a database.</p>
+					<p>When we pass an initial value into <code class="aqua">useState()</code>, it returns a function we can use to update the value in state!</p>
+<pre><code class="javascript">import React, { useState } from 'react';
+const Temperature = (props) => {
+  const [currentTemp,setCurrentTemp] = useState(props.currentTemp);
+}
+export default Temperature;
+</code></pre>
+					<p><code class="aqua">setCurrentTemp(userInputOrData)</code> will update the value in state.</p>
+					<p>setCurrentTemp(70)</p>
+				</section>
+
+				<section>
+					<h2>How to Set the State?</h2>
+					<p>Let's assume we have another function of <code class="aqua">increaseTemp()</code> that increments by 15.</p>
+<pre><code class="javascript">import React, { useState } from 'react';
+const Temperature = (props) => {
+  const [currentTemp,setCurrentTemp] = useState(props.currentTemp);
+
+  const increaseTemp = () => {
+    setCurrentTemp(currentTemp + 15);
+  }
+}
+export default Temperature;
+</code></pre>
+				</section>
+
+				<section>
+					<h2>How to Set the State?</h2>
+					<p>Let's see the temperature and a button that listens for a click to execute the function of <code class="aqua">increaseTemp()</code>.</p>
+<pre><code class="javascript">import React, { useState } from 'react';
+const Temperature = (props) => {
+  const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
+
+  const increaseTemp = () => {
+    setCurrentTemp(currentTemp + 15);
+  }
+
+  return (
+    <div>
+      <p>{currentTemp}</p>
+      &lt;button onClick={increaseTemp}>Heat It Up!&lt;/button>
+    </div>
+  );
+}
+export default Temperature;
+</code></pre>
+				</section>
+
+				<section>
+					<h2>How to Set the State? - Child Component</h2>
+<pre><code class="javascript">import React, { useState } from 'react';
+const Temperature = (props) => {
+  const [currentTemp,setCurrentTemp] = useState(props.currentTemp);
+  const increaseTemp = () => {
+    setCurrentTemp(currentTemp + 15);
+  }
+  var stateOfMatter = (currentTemp <= 32) ? 'Solid'
+  : (currentTemp >= 212) ? 'Gas'
+  : 'Liquid';
+  return (
+    <div>
+      <p>At { this.state.currentTemp }°F, water is considered to be a 
+       { stateOfMatter } state of matter.</p>
+      <button onClick={increaseTemp}>Heat It Up!</button>
+    </div>
+  );
+}
+export default Temperature;
+</code></pre>
+				</section>
+
+				<section>
+					<h2>How to Set the State? - Parent Component</h2>
+<pre><code class="javascript">import React from 'react';
+import Temperature from './Temperature';
+const Parent = () => {
+  return (
+    &lt;Temperature currentTemp={47}/>
+  );
+}
+export default Temperature;
+</code></pre>
+				</section>
+
+				<!-- <section>
 					<h2>How to set the State?</h2>
 					<p class="fragment">There is a method called setState()! woohoo!</p>
 					<p class="fragment">When your user is interacting with your app, you can update the state based on their input, or based on data your app is receiving from a database.</p>
@@ -1056,7 +1276,7 @@ render() {
 }
 export default Temperature
 </code></pre>
-				</section>
+				</section> -->
 
 				<section>
 					<h2>This is why the virtual DOM is awesome!!!!</h2>
@@ -1082,20 +1302,27 @@ export default Temperature
 							</ul>
 						</li>
 					</ul>
-					<p>A presentational component:</p>
-<pre><code class="javascript">
+					<p>A presentational child component:</p>
+<!-- <pre><code class="javascript">
 class Welcome extends React.Component{
  render() {
   return (
     &lt;p>Welcome {this.props.firstName} {this.props.lastName}!&lt;/p>
   );
-};</code></pre>
-					
+};</code></pre> -->
+<pre><code class="javascript">import React from 'react';
+const Welcome = (props) => {
+  return (
+    &lt;p>Welcome {props.firstName} {props.lastName}!&lt;/p>
+  );
+}
+export default Welcome;
+</code></pre>					
 					</section>
 					
 					<section>
-						<h2>A stateful component</h2>
-<pre><code class="javascript">
+						<h2>A stateful child component</h2>
+<!-- <pre><code class="javascript">
 class Welcome extends React.Component{
   constructor(props){
    super();
@@ -1111,7 +1338,22 @@ class Welcome extends React.Component{
       &lt;/p>
    );
 }
-})</code></pre>
+})</code></pre> -->
+<pre><code class="javascript">import React, { useState } from 'react';
+const Welcome = (props) => {
+  const [firstName, setFirstName] = useState(props.firstName);
+  const [lastName, setLastName] = useState(props.lastName);
+  const [count, setCount] = useState(props.count);
+  //more code here informing how state changes upon user or data input
+  return (
+    &lt;p>
+      Welcome {firstName} {lastName}!
+      Count: {count}
+    &lt;/p>
+  );
+}
+export default Welcome;
+</code></pre>
 				</section>
 
 
@@ -1122,6 +1364,15 @@ class Welcome extends React.Component{
 						<li>Start from <a href="http://jsbin.com/popenul/edit?html,js,output" target="_blank">here</a>.</li>
 						<li>Fix the broken counter</li>
 						<li>Make sure the value of the counter is visible to the user.</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>Note on Debugging</h2>
+					<p>Remember that <code class="aqua">console.log()</code> is your friend!</p>
+					<ul>
+						<li>Checks how the data coming into the app looks like.</li>
+						<li>Checks props that are being passed into components.</li>
 					</ul>
 				</section>
 
@@ -1202,7 +1453,42 @@ class Welcome extends React.Component{
 					<p>Learn more about the lifecycle in <a href="https://facebook.github.io/react/docs/react-component.html" target="_blank">the docs</a>.</p>
 				</section>
 
-				<!-- Lifecycle example -->
+				<section>
+					<h2>useEffect()</h2>
+					<p><code class="aqua">useEffect()</code> gets called every time a component renders or rerenders with an update to state.</p>
+					<p>We can limit its execution to only certain changes:</p>
+					<ul>
+						<li>when a component mounts/unmounts</li>
+						<li>a prop updates</li>
+						<li>a state updates</li>
+					</ul>
+				</section>
+
+				<section>
+					<h2>useEffect()</h2>
+					<p><code class="aqua">useEffect()</code> can accept two arguments:</p>
+					<ul>
+						<li>function - code to run after component (re)renders</li>
+						<li>dependency array - items on which function calls depend</li>
+					</ul>
+<pre><code class="javascript">import React, { useState } from 'react';
+const Counter = (props) => {
+  const [count, setCount] = useState(props.count);
+  //more code here informing how state changes upon user or data input
+  useEffect(() => {
+    console.log(count);
+  },[count]); //useEffect() will only run when count's value changes. 
+  return (
+    &lt;p>
+      Count: {count}
+    &lt;/p>
+  );
+}
+export default Counter;
+</code></pre>
+				</section>
+
+				<!-- Lifecycle example 
 				<section>
 					<h2>Component Lifecycle</h2>
 <pre><code class="javascript">
@@ -1243,7 +1529,7 @@ componentWillUnmount() {
 	// do clean up to avoid memory leaks!
 }
 	};</code></pre>
-					</section>
+				</section> -->
 
 				<!-- Exercise: Lifecyle -->
 				<section>
@@ -1255,18 +1541,29 @@ componentWillUnmount() {
 						<li>Loading data!</li>
 					</ul>
 					<p></p>
-					<a href="https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1">More Examples</a>
+					<a href="https://engineering.musefind.com/react-lifecycle-methods-how-and-when-to-use-them-2111a1b692b1" target="_blank">More Examples</a>
+				</section>
+
+				<section>
+					<h2>useEffect() Exercise</h2>
+					<p>Exercise needed here.</p>
+				</section>
+
+				<section>
+					<h2>APIs</h2>
+					<p>Info on debugging and APIs needed here.</p>
 				</section>
 
 				<section>
 					<h2>Remember!</h2>
-					<p>Just because you are running a componentWillMount() function, doesn't mean it will finish before your render() is complete.</p>
+					<!-- <p>Just because you are running a componentWillMount() function, doesn't mean it will finish before your render() is complete.</p> -->
+					<p>Just because you are running a useEffect() function, doesn't mean it will finish before your component's initial render is complete.</p>
 				</section>
 
 				<section>
 					<h2>Review</h2>
 					<ul>
-						<li class="fragment">JSX — Allows us to write HTML like syntax which gets transformed to lightweightJavaScript objects.</li>
+						<li class="fragment">JSX — Allows us to write HTML-like syntax which gets transformed to lightweightJavaScript objects.</li>
 						<li class="fragment">Virtual DOM — A JavaScript representation of the actual DOM.</li>
 						<li class="fragment">React.Component — The way in which you create a new component.</li>
 						<li class="fragment">render (method) — Describes what the UI will look like for the particular component.</li>
@@ -1310,15 +1607,15 @@ componentWillUnmount() {
 
 				<section>
 					<h2>Do yourself a favor...</h2>
-					<p>Check out React UI Frameworks for styling (including <a href="https://react-bootstrap.github.io/">react-bootstrap</a> and <a href="https://hackernoon.com/23-best-react-ui-component-libraries-and-frameworks-250a81b2ac42?mkt_tok=eyJpIjoiTVdRd01HVmlaamN6WVRVeCIsInQiOiI4TGVyNUljaDRxXC9NeUhGRnhhUjhBYWQxK2RvODJ4b0t2N1lOSTJUVk1ZTWxiT1pyWGRFZUZmNFR0aWFyNXo0dVVrV3kxYWF3anFTUnpBMGM3RmZwZFh1b3hJVmhoRjJ6K0VIWW5lNDUyVVwvZ0pJaTFQUE1BWXFyT3NNeUxpNWVzIn0%3D">Google Materials</a> )</p>
-					<p><a href="https://codeburst.io/styling-in-react-5aafecc5edd3?mkt_tok=eyJpIjoiWmpCbU1tTTNOVGMxTlRNNSIsInQiOiJmdEN4QitsQ2lXWWgyS3BucWVnRHNETEQ3RWNkOGdEZVwvYmJMZWI2Um5oenFmY2lYZk1FZGJBZkZVWU9qSUJ3Ykk1YlREVmt4b1wvbHNLM1FTaUNTZVFRY1pScTd0eEpYc0l4NGxcL0xPVnRiNmRlRDd5YVwvTGxIRldJc2hUZ2JtNlkifQ%3D%3D">Click here for more on styling</a></p>
+					<p>Check out React UI Frameworks for styling (including <a href="https://react-bootstrap.github.io/">react-bootstrap</a> and <a href="https://hackernoon.com/23-best-react-ui-component-libraries-and-frameworks-250a81b2ac42?mkt_tok=eyJpIjoiTVdRd01HVmlaamN6WVRVeCIsInQiOiI4TGVyNUljaDRxXC9NeUhGRnhhUjhBYWQxK2RvODJ4b0t2N1lOSTJUVk1ZTWxiT1pyWGRFZUZmNFR0aWFyNXo0dVVrV3kxYWF3anFTUnpBMGM3RmZwZFh1b3hJVmhoRjJ6K0VIWW5lNDUyVVwvZ0pJaTFQUE1BWXFyT3NNeUxpNWVzIn0%3D" target="_blank">Google Materials</a> )</p>
+					<p><a href="https://codeburst.io/styling-in-react-5aafecc5edd3?mkt_tok=eyJpIjoiWmpCbU1tTTNOVGMxTlRNNSIsInQiOiJmdEN4QitsQ2lXWWgyS3BucWVnRHNETEQ3RWNkOGdEZVwvYmJMZWI2Um5oenFmY2lYZk1FZGJBZkZVWU9qSUJ3Ykk1YlREVmt4b1wvbHNLM1FTaUNTZVFRY1pScTd0eEpYc0l4NGxcL0xPVnRiNmRlRDd5YVwvTGxIRldJc2hUZ2JtNlkifQ%3D%3D" target="_blank">Click here for more on styling</a></p>
 				</section>
 
 				<section>
 					<h2>Bonus!</h2>
 					<p>React Router and Navigation</p>
 					<p>Client-side routing in "Single-Page Applications"</p>
-					<a href="https://reacttraining.com/react-router/">More here</a>
+					<a href="https://reacttraining.com/react-router/" target="_blank">More here</a>
 				</section>
 
 		<!-- Last Slide -->
