@@ -523,14 +523,19 @@ export default HelloMessage
 			</section>
 
 			<section>
-				<h2>Understanding the Component</h2>
-				<p class="fragment">React components always have to import the React code to create a compoment with all of the React features.</p>
-				<p class="fragment">The function will always have a return statement.</p>
-				<p class="fragment">The return statement will always be the code that is displayed in the UI.</p>
-				<p class="fragment">An export statement will allow this component to be used by other components.</p>
+				<h2>Understanding a Component</h2>
+				<ul>
+					<li class="fragment">React components always have to import the React code to create a compoment with all of the React features.</li>
+					<li class="fragment">The function will always have a return statement.</li>
+					<li class="fragment">The return statement will always be the code that is displayed in the UI.</li>
+					<li class="fragment">An export statement will allow this component to be used by other components.</li>
+				</ul>
 			</section>
 
-			
+			<section>
+				<h2>Understanding a Component</h2>
+				<p>For now, this component does not have any dynamic data. We will work on creating the UI first (with JSX), and then adding data.</p>
+			</section>
 
 			<!-- Concepts: JSX -->
 
@@ -540,7 +545,11 @@ export default HelloMessage
 					<li class="fragment">A short-hand language that lets you create JavaScript objects using an HTML-like syntax.</li>
 					<li class="fragment">Generates JavaScript objects by matching HTML element names to components.</li>
 				</ul>
-				<p class="fragment">Check out <a href="https://babeljs.io/" target="_blank">Babel</a> to see it in action!</p>
+			</section>
+
+			<section>
+				<h2>JSX</h2>
+				<img src="images/jsx.png" alt="JSX">
 			</section>
 
 			<section>
@@ -560,22 +569,19 @@ export default HelloMessage
 				<p>Log in to your Udemy for Business account and watch <a href="https://anniecannons.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/25595410#:~:text=31.-,Introducing,-JSX" target="_blank">this</a> short video</p>
 			</section>
 
-			<section>
-				<h2>JSX</h2>
-				<img src="images/jsx.png" alt="JSX">
-			</section>
+			
 
 			<section>
 				<h2>Exercise: Intro to JSX Elements</h2>
 				<p>Complete the four tasks listed in <a href="https://codesandbox.io/s/intro-to-jsx-elements-8ge1r?file=/src/App.js" target="_blank">this</a> CodePen</p>
 			</section>
 
-			<section>
+			<!-- <section>
 				<h2>Adding JavaScript to JSX</h2>
 				<p>Add exercise here when terminal is fixed</p>
-			</section>
+			</section> -->
 
-			<section>
+			<!-- <section>
 				<h2>JSX Practice Project</h2>
 				<ul>
 					<li class="fragment">Create a new React app called handle-jsx-practice</li>
@@ -584,9 +590,9 @@ export default HelloMessage
 					<li class="fragment">[Inject JS into file]</li>
 					<li class="fragment">Make 3 different components and render them</li>
 				</ul>
-			</section>
+			</section> -->
 
-			<section>
+			<!-- <section>
 				<h2>Virtual DOM</h2>
 				<ul>
 					<li class="fragment">A JavaScript object</li>
@@ -610,11 +616,11 @@ export default HelloMessage
 			<section>
 				<h2>More on the virtual DOM</h2>
 				<a href="https://evilmartians.com/chronicles/optimizing-react-virtual-dom-explained " target="_blank">click here</a>
-			</section>
+			</section> -->
 
 			
 			<section>
-				<h2>Your first React component</h2>
+				<h2>Create a React component</h2>
 				<ol>
 					<li>Go to <a href="http://jsbin.com/gekozos/3/edit?html,css,js,output" target="_blank">http://jsbin.com/gekozos/3/edit?html,css,js,output</a></li>
 					<li>We&rsquo;ll work together to make a component called <code class="inline">UserProfile</code>. It should include:
@@ -686,89 +692,7 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 				<h2>JSX Project</h2>
 			</section>
 
-			<section>
-				<h2>Styling Components</h2>
-				<p>Similar to website development projects, CSS can also be applied to React applications in three ways:</p>
-				<ul>
-					<li>Externally</li>
-					<li>Internally</li>
-					<li>Inline</li>
-				</ul>
-			</section>
-
-			<section>
-				<h2>External CSS in React</h2>
-				<p>In general, external CSS files are siblings of their respective JS files in the directory.</p>
-				<p>Example: <code class="aqua">App.css</code> is a sibling of <code class="aqua">App.js</code></p>
-				<div class="fragment">
-					<p>So to import an external CSS file into a JS file:</p>
-<pre><code class="javascript">//In the App.js file:
-import "./App.css";
-</code></pre>		
-				</div>
-				<p class="fragment">External CSS is great for the overall styling of parent pages housing reusable components.</p>		
-			</section>
-
-			<section>
-				<h2>Internal CSS in React</h2>
-				<p>Internal CSS groups behavior (JS) with markup (JSX) and styling (CSS), which is quite helpful for child components. React component libraries help to apply such styles.</p>
-				<div class="fragment">
-				<p>Example: Material UI library has a <code class="aqua">makeStyles</code> method.</p>
-<pre><code class="javascript">import { makeStyles } from "@material-ui/core/styles";
-
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: "flex"
-  }
-}));
-</code></pre>			
-				</div>
-				<p class="fragment">Importing the method and applying the styles is the first step. Next, we must apply the styling to the JSX.</p>
-			</section>
-
-			<section>
-				<h2>Internal CSS in React</h2>
-				<p>After importing and declaring the styles to be used in a component, the next step is to apply the styling to the markup via the <code class="aqua">export</code> and <code class="aqua">return</code>.</p>
-<pre class="fragment"><code class="javascript">export default function [name of function](parameter(s)) {
-  const classes = useStyles();
-}
-
-return (
-  &lt;div className={classes.root}>
-    &lt;h1>JSX (markup)&lt;/h1>
-  &lt;/div>
-)
-</code></pre>			
-				<p class="fragment">Internal CSS is great for component-scoped styling in child components. So when a component breaks, we can easily find and debug its accompanying markup, styling, and behavior.</p>
-				<aside class="notes">Note the use of className attribute in the JSX element. CSS classes are generally better for performance than inline styles, which we'll cover in the next slide.</aside>
-			</section>
-
-			<section>
-				<h2>Inline CSS in React</h2>
-				<p>Inline CSS applies styling to a specified JSX element.</p>
-<pre class="fragment"><code class="javascript">//for a to do list:
-function getList({item, isDone}) {
-  return (
-    &lt;div>
-      &lt;p style={{ color: isDone ? "green" : "red" }}>{item}&lt;/p>
-    &lt;/div>
-  )
-}
-</code></pre>
-				<p class="fragment">Inline CSS can be used for a nonreusable component or element.</p>
-				<aside class="notes">Notice the paragraph element. In JSX, we use {} to assign the value to an attribute. We then need to pass an object into the curly braces.</aside>
-			</section>
-
-			<section>
-				<h2>CSS in React</h2>
-				<p>Although other tools exist to apply styling in React applications, the general rule is:</p>
-				<ul>
-					<li>External CSS applies overall styles for parent pages or components.</li>
-					<li>Internal CSS overrides external CSS and is best for reusable component-scoped styling.</li>
-					<li>Inline CSS overrides all other CSS properties and hinders performance. Use sparingly.</li>
-				</ul>
-				<aside class="notes">CSS classes are generally better for performance. So strive to code with reusability in mind.</aside>
-			</section>
+			
 
 			<section>
 				<h2>Debugging</h2>
@@ -789,8 +713,8 @@ function getList({item, isDone}) {
 
 			<section>
 				<h2>Props!</h2>
-				<p>A system for passing data between components, usually from parent to child.</p>
-				<p><code class="aqua">console.log()</code> is great for checking data structure of props passed between components!</p>
+				<p>A system for passing data between components, from parent to child.</p>
+				<p>Props allow you the chance to display your data into your components in a dynamic way!</p>
 			</section>
 
 			<!-- <section>
@@ -801,7 +725,7 @@ function getList({item, isDone}) {
 			<section>
 				<h2>Parent vs Child Components</h2>
 				<ul>
-					<li class="fragment">In HTML and vanilla JavaScript, nesting is how we determine the generational relationship.</li>
+					<li class="fragment">In HTML, nesting is how we determine the generational relationship.</li>
 					<li class="fragment">In React, we look to where components are imported to determine the parent-child relationship.</li>
 					<li class="fragment">When one component is imported into another, the imported child component must render somewhere inside of the parent component.</li>
 				</ul>
@@ -846,7 +770,7 @@ import HelloMessage from './hellomessage';
 const App = () => {
   return (
     <div>
-      &lt;HelloMessage name="Coach" /&gt;
+      &lt;HelloMessage name="Alex" /&gt;
     </div>
   );
 }
@@ -914,11 +838,17 @@ const WelcomeText = (props) => {
 					<h2>Starter Data as Props</h2>
 					<p>Front end engineers might need to build out parts of the web application before backend engineers build out their code.</p>
 					<p>So it is helpful to create and work with starter data.</p>
-					<p>Since data travels across the internet as JSON, let's review objects.</p>
+					<p>You can create a JS file with data and import it into your project, and pass as props.</p>
+				</section>
+
+				<section>
+					<h2>Let's display data</h2>
+					<p>By using maps, we can display one component for each object that we have received from an API call.</p>
+					<p>If we have 100 user objects, we can create 100 user profile cards with a map.</p>
 				</section>
 
 				<!-- JS Objects -->
-				<section>
+				<!-- <section>
 					<h2>Objects: A quick review</h2>
 					<ul>
 						<li class="fragment">What is an object?</li>
@@ -926,10 +856,10 @@ const WelcomeText = (props) => {
 						<li class="fragment">Key/value pairs</li>
 						<li class="fragment">Adding methods to objects</li>
 					</ul>
-				</section>
+				</section> -->
 
 				<!-- JS Objects -->
-				<section>
+				<!-- <section>
 					<h2>What is an object?</h2>
 					<ul>
 						<li>A way to describe concepts in an application or program.
@@ -946,10 +876,10 @@ const WelcomeText = (props) => {
 							</ul>
 						</li>
 					</ul>
-				</section>
+				</section> -->
 
 				<!-- Make an object -->
-				<section>
+				<!-- <section>
 					<h2>How to make an object</h2>
 					<p>With an object literal:</p>
 <pre><code class="javascript">var contact0 = {
@@ -976,10 +906,10 @@ contact1['organization'] = 'The Desert';
     website: 'https://disney.com'
   }
 };</code></pre>
-				</section>
+				</section> -->
 
 				<!-- Accessing properties of objects -->
-				<section>
+				<!-- <section>
 					<h2>Accessing properties of objects</h2>
 					<p>Two ways:</p>
 					<p>With dot notation:</p>
@@ -990,7 +920,7 @@ contact1.lastName;
 <pre><code class="javascript">contact0['firstName'];
 contact2['lastName'];
 </code></pre>
-				</section>
+				</section> -->
 
 				<!-- Maps, Dictionnaries, Hashes -->
 				<section>
@@ -1008,7 +938,7 @@ contact2['lastName'];
   ],
   books: [{
     title: 'Green Eggs &amp; Ham',
-    author: 'Dr. Suess',
+    author: 'Dr. Seuss',
     ISBN13: '978-0394800165'
    }
   ]
@@ -1028,11 +958,6 @@ contact2['lastName'];
 					<p>Take some time to read through the <a href="https://reactjs.org/docs/lists-and-keys.html" target="_blank">documentation</a> </p>
 					<p>Examine the CodePens</p>
 					<p>We will discuss after!</p>
-				</section>
-
-				<section>
-					<h2>Using <code style="color: turquoise;">.map()</code></h2>
-					<h3>Adding Keys</h3>
 				</section>
 
 				<section>
@@ -1056,6 +981,11 @@ const nameArray = ['Harrison', 'Adam', 'Laura'];
 				</section>
 
 				<section>
+					<h2>Using <code style="color: turquoise;">.map()</code></h2>
+					<p>In the previous example, the key attribute assigns a unique identifier to each of the components.</p>
+				</section>
+
+				<section>
 					<h2>Maps</h2>
 					<p>map() iterates over a list, transforms each member of that list, and returns another list of the same size with the transformed members (example: transforming list of strings to uppercase)</p>
 <pre><code class="javascript">
@@ -1068,7 +998,7 @@ console.log(map1);
 					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map" target="_blank">Helpful MDN</a>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h2>forEach()</h2>
 					<p>forEach() iterates over a list and applies some operation with side effects to each list member (example: saving every list item to the database)</p>
 <pre><code class="javascript">var words = [{name:'one'}, {name:'two'}, {name:'three'}, {name:'four'}];
@@ -1080,7 +1010,7 @@ words.forEach(function(word) {
 console.log(words);
 </code></pre>
 					<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach" target="_blank">Helpful MDN</a>
-				</section>
+				</section> -->
 
 				 <!-- Methods and 'this' 
 				<section>
@@ -1149,7 +1079,7 @@ console.log(currentUser.mI()); // logs 'J'
 
 				<!-- Break -->
 
-				<section>
+				<!-- <section>
 					<h2>ES6</h2>
 					<ul>
 						<li>let, const</li>
@@ -1157,7 +1087,7 @@ console.log(currentUser.mI()); // logs 'J'
 						<li>arrow functions</li>
 					</ul>
 					<a href="https://docs.google.com/presentation/d/1ayo6JgXGZ-dfClAwhJxSN1PM11fJG6G6O32XwE5Tokg/edit?usp=sharing" target="_blank">Let's check this out!</a>
-				</section>
+				</section> -->
 	
 				<section>
 					<h2>Employee Page Props Exercise</h2>
@@ -1166,13 +1096,13 @@ console.log(currentUser.mI()); // logs 'J'
 					<img src="./images/data-structure-practice.png" alt="Employee Page Data Structure Practice">
 				</section>
 
-				<section>
+				<!-- <section>
 					<h3>Hooks</h3>
-				</section>
+				</section> -->
 
 				<section>
-					<h1>Lecture 2</h1>
-					<p>State and the Constructor</p>
+					<h2>State and the Constructor</h2>
+					<p>Storing dynamic data</p>
 					<img src="images/bringit.jpeg" alt="Bring it on!">
 				</section>
 
@@ -1182,7 +1112,7 @@ console.log(currentUser.mI()); // logs 'J'
 					<h2>State</h2>
 					<ul>
 						<li class="fragment">A JavaScript object</li>
-						<li class="fragment">A set of key/value pairs that represents the current state of the application.</li>
+						<li class="fragment">A set of key/value pairs that represents the current state (or stored data) of the component.</li>
 					</ul>
 <pre class="fragment"><code class="javascript">var me = {
   mood: 'happy',
@@ -1720,6 +1650,92 @@ componentWillUnmount() {
 					<p>We have already added HTML (JSX) into our JavaScript, surely we won't add CSS into our JavaScript as well....</p>
 					<img src="http://rs210.pbsrc.com/albums/bb245/donmsaul/Meme%20GIF/seriously.gif~c200" alt="Seriously?">
 				</section>
+
+				<section>
+					<h2>Styling Components</h2>
+					<p>Similar to website development projects, CSS can also be applied to React applications in three ways:</p>
+					<ul>
+						<li>Externally</li>
+						<li>Internally</li>
+						<li>Inline</li>
+					</ul>
+				</section>
+	
+				<section>
+					<h2>External CSS in React</h2>
+					<p>In general, external CSS files are siblings of their respective JS files in the directory.</p>
+					<p>Example: <code class="aqua">App.css</code> is a sibling of <code class="aqua">App.js</code></p>
+					<div class="fragment">
+						<p>So to import an external CSS file into a JS file:</p>
+	<pre><code class="javascript">//In the App.js file:
+	import "./App.css";
+	</code></pre>		
+					</div>
+					<p class="fragment">External CSS is great for the overall styling of parent pages housing reusable components.</p>		
+				</section>
+	
+				<section>
+					<h2>Internal CSS in React</h2>
+					<p>Internal CSS groups behavior (JS) with markup (JSX) and styling (CSS), which is quite helpful for child components. React component libraries help to apply such styles.</p>
+					<div class="fragment">
+					<p>Example: Material UI library has a <code class="aqua">makeStyles</code> method.</p>
+	<pre><code class="javascript">import { makeStyles } from "@material-ui/core/styles";
+	
+	const useStyles = makeStyles((theme) => ({
+	  root: {
+		display: "flex"
+	  }
+	}));
+	</code></pre>			
+					</div>
+					<p class="fragment">Importing the method and applying the styles is the first step. Next, we must apply the styling to the JSX.</p>
+				</section>
+	
+				<section>
+					<h2>Internal CSS in React</h2>
+					<p>After importing and declaring the styles to be used in a component, the next step is to apply the styling to the markup via the <code class="aqua">export</code> and <code class="aqua">return</code>.</p>
+	<pre class="fragment"><code class="javascript">export default function [name of function](parameter(s)) {
+	  const classes = useStyles();
+	}
+	
+	return (
+	  &lt;div className={classes.root}>
+		&lt;h1>JSX (markup)&lt;/h1>
+	  &lt;/div>
+	)
+	</code></pre>			
+					<p class="fragment">Internal CSS is great for component-scoped styling in child components. So when a component breaks, we can easily find and debug its accompanying markup, styling, and behavior.</p>
+					<aside class="notes">Note the use of className attribute in the JSX element. CSS classes are generally better for performance than inline styles, which we'll cover in the next slide.</aside>
+				</section>
+	
+				<section>
+					<h2>Inline CSS in React</h2>
+					<p>Inline CSS applies styling to a specified JSX element.</p>
+	<pre class="fragment"><code class="javascript">//for a to do list:
+	function getList({item, isDone}) {
+	  return (
+		&lt;div>
+		  &lt;p style={{ color: isDone ? "green" : "red" }}>{item}&lt;/p>
+		&lt;/div>
+	  )
+	}
+	</code></pre>
+					<p class="fragment">Inline CSS can be used for a nonreusable component or element.</p>
+					<aside class="notes">Notice the paragraph element. In JSX, we use {} to assign the value to an attribute. We then need to pass an object into the curly braces.</aside>
+				</section>
+	
+				<section>
+					<h2>CSS in React</h2>
+					<p>Although other tools exist to apply styling in React applications, the general rule is:</p>
+					<ul>
+						<li>External CSS applies overall styles for parent pages or components.</li>
+						<li>Internal CSS overrides external CSS and is best for reusable component-scoped styling.</li>
+						<li>Inline CSS overrides all other CSS properties and hinders performance. Use sparingly.</li>
+					</ul>
+					<aside class="notes">CSS classes are generally better for performance. So strive to code with reusability in mind.</aside>
+				</section>
+
+				
 
 				<section>
 					<h2>You have Options!</h2>
