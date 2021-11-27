@@ -1188,34 +1188,67 @@ class Temperature extends React.Component{
 				</section> -->
 
 				<section>
+					<h2>Understanding state syntax</h2>
+<pre><code class="javascript">const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
+</code></pre>
+					<ol>
+						<li><code class="aqua">useState()</code> is a React Hook that allows us to declare an initial state (props.currentTemp)</li>
+						<li>A Hook is a special function that lets you “hook into” React features. For example, useState is a Hook that lets you add state to components.
+						</li>
+				</section>
+
+				<section>
+					<h2>Understanding state syntax</h2>
+<pre><code class="javascript">const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
+</code></pre>
+					<ol>
+						<li>On the left of the equal sign, you can create variables to store the current value of an item in state (currentTemp) </li> 
+						<li>You can also declare a function (setCurrentTemp) that can be called to update the value of the variable (currentTemp) in state.</li>
+				</section>
+
+				<section>
 					<h2>Where is state stored?</h2>
-					<p>Local state is stored in the component itself! In something call the constructor. It is outside of the render function.</p>
+					<p>State is stored in the component itself! It is outside of the render function.</p>
 <pre><code class="javascript">import React, { useState } from 'react';
+
 const Temperature = (props) => {
-  const [currentTemp,setCurrentTemp] = useState(props.currentTemp);
+  const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
+
+  return (
+   <div>
+    <p>The temperature is {currentTemp}</p>
+   </div>
+  )
 }
+
 export default Temperature;
 </code></pre>
-					<p><code class="aqua">useState()</code> is a React Hook that allows us to declare an initial state (<code class="aqua">props.currentTemp</code>) and store the value to a variable (<code class="aqua">currentTemp</code>) with an option to call a function (<code class="aqua">setCurrentTemp</code>) to update the value in state.</p>
+				</section>
+
+				<section>
+					<h2>Real life analogy</h2>
+					<p>Our thermometor (our component) comes with a default temperature (this is the default value stored in state)</p>
+					<p>As the temperature changes, the thermometor updates the temperature reading (this is the setCurrentTemp function)</p>
+					<p>The value of the temperature to display to the viewer is store as the value of currentTemp.</p>
 				</section>
 
 				<section>
 					<h2>How to set the State?</h2>
 					<p>Setting the state means updating the value in state based on user input or the data your app is receiving from a database.</p>
 					<p>When we pass an initial value into <code class="aqua">useState()</code>, it returns a function we can use to update the value in state!</p>
-<pre><code class="javascript">import React, { useState } from 'react';
+<!-- <pre><code class="javascript">import React, { useState } from 'react';
 const Temperature = (props) => {
   const [currentTemp,setCurrentTemp] = useState(props.currentTemp);
 }
 export default Temperature;
 </code></pre>
 					<p><code class="aqua">setCurrentTemp(userInputOrData)</code> will update the value in state.</p>
-					<p>setCurrentTemp(70)</p>
+					<p>setCurrentTemp(70)</p> -->
 				</section>
 
 				<section>
 					<h2>How to Set the State?</h2>
-					<p>Let's assume we have another function of <code class="aqua">increaseTemp()</code> that increments by 15.</p>
+					<p>Let's assume we have another function of <code class="aqua">increaseTemp()</code> that increments temperature by 15.</p>
 <pre><code class="javascript">import React, { useState } from 'react';
 const Temperature = (props) => {
   const [currentTemp,setCurrentTemp] = useState(props.currentTemp);
@@ -1251,37 +1284,42 @@ export default Temperature;
 				</section>
 
 				<section>
-					<h2>How to Set the State? - Child Component</h2>
+					<h2>Child Component</h2>
 <pre><code class="javascript">import React, { useState } from 'react';
+
 const Temperature = (props) => {
-  const [currentTemp,setCurrentTemp] = useState(props.currentTemp);
+  const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
+
   const increaseTemp = () => {
     setCurrentTemp(currentTemp + 15);
   }
-  var stateOfMatter = (currentTemp <= 32) ? 'Solid'
-  : (currentTemp >= 212) ? 'Gas'
-  : 'Liquid';
+
+  var stateOfMatter = (currentTemp <= 32) ? 'Solid' : (currentTemp >= 212) ? 'Gas' : 'Liquid';
+
   return (
     <div>
-      <p>At { this.state.currentTemp }°F, water is considered to be a 
+      <p>At { currentTemp }°F, water is considered to be a 
        { stateOfMatter } state of matter.</p>
       <button onClick={increaseTemp}>Heat It Up!</button>
     </div>
   );
 }
+
 export default Temperature;
 </code></pre>
 				</section>
 
 				<section>
-					<h2>How to Set the State? - Parent Component</h2>
+					<h2>The Parent Component</h2>
 <pre><code class="javascript">import React from 'react';
 import Temperature from './Temperature';
+
 const Parent = () => {
   return (
     &lt;Temperature currentTemp={47}/>
   );
 }
+
 export default Temperature;
 </code></pre>
 				</section>
@@ -1339,6 +1377,27 @@ export default Temperature
 					<p>yay react!</p>
 					<img src="http://78.media.tumblr.com/8f3b9548952b76790dd1d7eda4d3870a/tumblr_mrr9z9Yubn1qk08n1o1_500.gif" alt="I want you to win">
 				</section>
+
+			<section>
+				<h2>Virtual DOM</h2>
+				<ul>
+					<li class="fragment">A JavaScript object</li>
+					<li class="fragment">Created by the library auto-magically</li>
+					<li class="fragment">An in-memory representation of DOM nodes and elements. It allows the browser to only update the necessary parts of the component when the state changes.</li>
+					<li class="fragment"><a href="http://blog.reverberate.org/2014/02/react-demystified.html" target="_blank">Learn more</a></li>
+				</ul>
+				<img class="fragment" src="images/virtualdom.png" alt="Virtual DOM" width="500px">
+			</section>
+
+			<section>
+				<h2>Virtual DOM</h2>
+				<img src="images/example.png" alt="Virtual DOM">
+			</section>
+
+			<section>
+				<h2>Virtual DOM</h2>
+				<img src="images/proscons.png" alt="Pros and Cons">
+			</section>
 
 				<section>
 					<h2>Exercise</h2>
@@ -1435,9 +1494,9 @@ export default Welcome;
 				<!-- Forms -->
 				<section>
 						<h2>Forms!</h2>
-						<p>Forms in React present some interesting challenges.</p>
+						<p>When you are working with forms in React, you can store the user's inputs into state.</p>
 						<ul>
-							<li>Unlike other elements, form controls can be mutated by users.
+							<li>You can use form controls to collect data from users.
 								<ul>
 									<li><code class="inline">&lt;input></code></li>
 									<li><code class="inline">&lt;select></code></li>
@@ -1445,8 +1504,8 @@ export default Welcome;
 								</ul>
 							</li>
 						</ul>
-						<p><br>Try <a href="http://jsbin.com/tululup/1/edit?html,js,output" target="_blank">this example</a> and see what happens!</p>
-						<p>Learn more about forms in <a href="https://facebook.github.io/react/docs/forms.html" target="_blank">the docs</a>.</p>
+						
+						<!-- <p>Learn more about forms in <a href="https://facebook.github.io/react/docs/forms.html" target="_blank">the docs</a>.</p> -->
 					</section>
 	
 					<!-- Form inputs -->
@@ -1455,18 +1514,19 @@ export default Welcome;
 						<p>Input controls in React provide a few props that are designed to keep the UI state information synchronized with the underlying DOM:</p>
 						<ul>
 							<li><code class="inline">value</code>: the current value of the input</li>
-							<li><code class="inline">defaultValue</code>: used if the value is null or undefined</li>
+							<!-- <li><code class="inline">defaultValue</code>: used if the value is null or undefined</li> -->
 							<li><code class="inline">onChange</code>: a general event handler, use instead of onInput</li>
+							<p><br>Try <a href="http://jsbin.com/tululup/1/edit?html,js,output" target="_blank">this example</a> and see what happens!</p>
 						</ul>
 					</section>
 	
 					<!-- Exercise: Forms -->
 					<section>
-						<h2>Form Example</h2>
+						<h2>Form Practice</h2>
 						<ul>
-							<li><a href="http://jsbin.com/tiveduj/edit?html,js,output" target="_blank">Start here</a>.</li>
-							<li>Take a look at the <code class="inline">handleChange</code> method.</li>
-							<li>How do we get the value the user entered in the field?</li>
+							<li>Create a form with React that asks a user for a username, password, and date of birth.</li>
+							<li>Store the user's responses in state.</li>
+							<li>When the user clicks the submit button, log to the console an object that stores all of their responses.</li>
 						</ul>
 					</section>
 
@@ -1492,12 +1552,17 @@ export default Welcome;
 
 
 				<section>
-					<h1>Lecture 3</h1>
-					<p>Component Lifecycle Methods and Styled Components</p>
-					<img src="http://i0.kym-cdn.com/photos/images/original/000/392/134/149.gif" alt="Dancing">
+					<!-- <h1>Lecture 3</h1> -->
+					<h3>Component Lifecycle Methods and Styled Components</h3>
+					<img src="images/style.jpeg" alt="Much style">
 				</section>
 
 				<!-- Component Lifecycle -->
+				<section>
+					<h2>Component Lifecycle</h2>
+					<p>Components Lifecycle references 1) when is the component created, 2) when does it run the return function, and 3) when can it call data.</p>
+				</section>
+
 				<section>
 					<h2>Component Lifecycle</h2>
 					<p>Components have a lifecycle in three phases:</p>
@@ -1506,7 +1571,11 @@ export default Welcome;
 						<li><strong>Updating:</strong> rendering updates</li>
 						<li><strong>Unmounting:</strong> an instance of a component is removed from the view</li>
 					</ol>
-					<p>Learn more about the lifecycle in <a href="https://facebook.github.io/react/docs/react-component.html" target="_blank">the docs</a>.</p>
+				</section>
+
+				<section>
+					<h2>Component Lifecycle</h2>
+					<img src="images/hookslifecycle.jpeg" alt="Hooks Lifecycle">
 				</section>
 
 				<section>
@@ -1521,26 +1590,49 @@ export default Welcome;
 				</section>
 
 				<section>
+					<h2>useEffect() Example</h2>
+<pre><code class="javascript">import React, { useState } from 'react';
+
+const ReportComponent = (props) => {
+  const [reports, setReports] = useState([]);
+
+  useEffect(() => {
+    let response = await API.get("project-api", "getreports")
+      setReports(response);
+    }
+  }, []);
+
+  return (
+    <div>
+     {reports.map((report, key) => {
+	  <div>
+	   Title: {report.title}
+	  </div>
+	 })}
+    </div>
+  );
+}
+export default ReportComponent;
+</code></pre>
+				</section>
+
+				<section>
 					<h2>useEffect()</h2>
 					<p><code class="aqua">useEffect()</code> can accept two arguments:</p>
 					<ul>
 						<li>function - code to run after component (re)renders</li>
 						<li>dependency array - items on which function calls depend</li>
 					</ul>
-<pre><code class="javascript">import React, { useState } from 'react';
-const Counter = (props) => {
-  const [count, setCount] = useState(props.count);
-  //more code here informing how state changes upon user or data input
+<pre><code class="javascript">
   useEffect(() => {
-    console.log(count);
-  },[count]); //useEffect() will only run when count's value changes. 
-  return (
-    &lt;p>
-      Count: {count}
-    &lt;/p>
-  );
-}
-export default Counter;
+    let response = await API.get("project-api", "getreports")
+      setReports(response);
+    }
+  }, []); //Only calls useEffect once
+
+  useEffect(() => {
+    setTitle("My Title: " + props.title)
+  }, [props.title]); // calls useEffect any time props.title changes
 </code></pre>
 				</section>
 
@@ -1601,31 +1693,28 @@ componentWillUnmount() {
 				</section>
 
 				<section>
-					<h2>useEffect() Exercise</h2>
-					<p>Exercise needed here.</p>
-				</section>
-
-				<section>
-					<h2>APIs</h2>
-					<p>Info on debugging and APIs needed here.</p>
-				</section>
-
-				<section>
 					<h2>Remember!</h2>
 					<!-- <p>Just because you are running a componentWillMount() function, doesn't mean it will finish before your render() is complete.</p> -->
 					<p>Just because you are running a useEffect() function, doesn't mean it will finish before your component's initial render is complete.</p>
 				</section>
 
+				<!-- <section>
+					<h2>APIs</h2>
+					<p>Info on debugging and APIs needed here.</p>
+				</section>-->
+				
+				<section>
+					<h2>useEffect() Exercise</h2>
+					<p>Exercise needed here.</p>
+				</section> 
+
 				<section>
 					<h2>Review</h2>
 					<ul>
-						<li class="fragment">JSX — Allows us to write HTML-like syntax which gets transformed to lightweightJavaScript objects.</li>
+						<li class="fragment">JSX — Allows us to write HTML-like syntax which gets transformed to lightweight JavaScript objects.</li>
 						<li class="fragment">Virtual DOM — A JavaScript representation of the actual DOM.</li>
-						<li class="fragment">React.Component — The way in which you create a new component.</li>
-						<li class="fragment">render (method) — Describes what the UI will look like for the particular component.</li>
-						<li class="fragment">ReactDOM.render — Renders a React component to a DOM node.</li>
+						<li class="fragment">Component — The main building blocks of React.</li>
 						<li class="fragment">state — The internal data store (object) of a component.</li>
-						<li class="fragment">constructor (this.state) - The way in which you establish the initial state of a component.</li>
 					</ul>
 				</section>
 
@@ -1633,9 +1722,9 @@ componentWillUnmount() {
 				<section>
 					<h2>Review</h2>		
 					<ul>
-						<li class="fragment">setState — A helper method used for updating the state of a component and re-rendering the UI</li>
+						<li class="fragment">useState — A hook method used for updating the state of a component and re-rendering the UI</li>
 						<li class="fragment">props — The data which is passed to the child component from the parent component.</li>
-						<li class="fragment">Component LifeCycle Methods (componentDidMount — Fired after the component mounted, componentWillUnmount — Fired before the component will unmount</li>
+						<li class="fragment">Component LifeCycle Methods/Hook (useEffect) - a way to call a function after the component has been created</li>
 						<li class="fragment">Events (onClick, onSubmit, onChange)</li>
 					</ul>
 				</section>
@@ -1668,7 +1757,7 @@ componentWillUnmount() {
 					<div class="fragment">
 						<p>So to import an external CSS file into a JS file:</p>
 	<pre><code class="javascript">//In the App.js file:
-	import "./App.css";
+import "./App.css";
 	</code></pre>		
 					</div>
 					<p class="fragment">External CSS is great for the overall styling of parent pages housing reusable components.</p>		
