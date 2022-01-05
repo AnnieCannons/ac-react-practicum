@@ -58,7 +58,7 @@
 			<section>
 				<h2>Codecademy</h2>
 				<p>Please complete all free lessons found <a href="https://www.codecademy.com/learn/react-101" target="_blank">here</a> </p>
-				<div class="fragment">
+				<div>
 					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
 					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
 				</div> 
@@ -68,9 +68,9 @@
 				<h2>Overview of this course</h2>
 				<ul>
 					<li class="fragment">Understand how JavaScript frameworks operate</li>
-					<li class="fragment lightgreen">Build some cool web applications</li>
+					<li class="fragment lightgreen">Build cool web applications</li>
 					<li class="fragment">Learn the fundamentals of React</li>
-					<li class="fragment lightgreen">Build even more confidence</li>					
+					<li class="fragment lightgreen">Gain even more confidence</li>					
 					<li class="fragment">Focus on learning how to teach yourself</li>
 				</ul>
 			</section>
@@ -105,7 +105,7 @@
 
 			<section>
 				<h2>Why can't I use jQuery?</h2>
-				<p>jQuery does not manage data. It also requires the DOM to constantly change.</p>
+				<p>jQuery does not manage data.<br>It also requires the DOM to constantly change.</p>
 				<img src="images/jqueryreact.jpeg" alt="jquery diagram" width='400px'>
 			</section>
 
@@ -127,16 +127,16 @@
 			<section>
 				<h2>Why React?</h2>
 				<img src="images/react-1.svg" alt="React Logo" width="50px">
-				<p class="fragment">React is fast. Apps made in React can handle complex updates and still feel quick and responsive.</p>
-				<p class="fragment">React is modular. Instead of writing large, dense files of code, you can write many smaller, reusable files. React’s modularity can be a beautiful solution to JavaScript’s maintainability problems.
+				<p class="fragment">React is <span class="yellow">fast</span>. Apps made in React can handle complex updates and still feel quick and responsive.</p>
+				<p class="fragment">React is <span class="yellow">modular</span>. Instead of writing large, dense files of code, you can write many smaller, reusable files. React’s modularity can be a beautiful solution to JavaScript’s maintainability problems.
 				</p>
 			</section>
 
 			<section>
 				<h2>Why React?</h2>
 				<img src="images/react-1.svg" alt="React Logo" width="50px">
-				<p class="fragment">React is scalable. Large programs that display a lot of changing data are where React performs best.</p>
-				<p class="fragment">React is flexible. You can use React for interesting projects that have nothing to do with making a web app. People are still figuring out React’s potential. There’s room to explore.
+				<p class="fragment">React is <span class="yellow">scalable</span>. Large programs that display a lot of changing data are where React performs best.</p>
+				<p class="fragment">React is <span class="yellow">flexible</span>. You can use React for interesting projects that have nothing to do with making a web app. People are still figuring out React’s potential. There’s room to explore.
 				</p>
 			</section>
 
@@ -144,15 +144,15 @@
 				<h2>Core Concepts in React</h2>
 				<p>(they are the same as JavaScript!)</p>
 				<ol>
-					<li>Managing Data (Data Flow)</li>
-					<li>Controling/Creating the UI (Components)</li>
+					<li>Managing Data (<span class="yellow">Data Flow</span>)</li>
+					<li>Controling/Creating the UI (<span class="yellow">Components</span>)</li>
 				</ol>
 			</section>
 
 			<section>
 				<h2>Components</h2>
-				<p>React is build on a component-driven architecture. This is critical for building large and performant web applications.</p>
-				<p>Components are reusable parts of a web application that can easily display unique data either to or from the user.</p>
+				<p>React is built on a <span class="yellow">component-driven architecture</span>, which is critical for building large and performant web applications.</p>
+				<p>Components are <span class="yellow">reusable</span> parts of a web application that can easily display unique data either to or from the user.</p>
 				<ul>
 					<li>A self-contained and reusable bit of code</li>
 					<li>One piece of a UI</li>
@@ -216,13 +216,19 @@
 
 			<section>
 				<h2>Big Takeaway</h2>
-				<p class="fragment">By putting all of the HTML, CSS, and JavaScript for each component in one place, we are making it reusable as well as easy to debug.</p>
+				<p>With the HTML, CSS, and JavaScript for each component in <span class="yellow">one place</span>, we are making it:</p>
+				<ul>
+					<li class="fragment">reusable</li>
+					<li class="fragment">easy to debug!</li>
+				</ul>
 			</section>
 
 			<section>
 				<h2>Big Takeaway</h2>
-				<p class="fragment">By putting all of the HTML, CSS, and JavaScript for each component in one place, we are making it reusable as well as easy to debug.</p>
-				<p class="fragment">Each card has the same layout, stylings, and functionality. All that changes is the data!</p>
+				<p class="fragment">Each component --<br>
+					with its HTML, CSS, and JavaScript in one place --<br>
+					is reusable and easy to debug.</p>
+				<p class="fragment">Each card has the same layout, stylings, and functionality.<br>All that changes is the data!</p>
 				<img class="fragment" src="images/component1.png" alt="Example of components" width ='600px'>
 			</section>
 
@@ -234,10 +240,10 @@
 
 			<section>
 				<h2>Dynamic Data in Designs</h2>
-				<p>Front end engineers often get a list of API calls from the backend engineers, endpoints that exist in an application.</p>
+				<p>Front end engineers often get a list of API calls from backend engineers, endpoints that exist in an application.</p>
 				<ol>Then the front end engineer must:
-					<li>make an API call to retreive the data</li>
-					<li>figure out how the requested data should flow to the remaining components</li>
+					<li class="fragment">make an API call to retrieve the data</li>
+					<li class="fragment">figure out how the requested data should flow to the remaining components</li>
 				</ol>
 				<!-- <p>Examples of functions to get data in the code: <span class="aqua">getUserProfileData</span>, <span class="aqua">getDiscussionForumData</span>, etc.</p> -->
 				<aside class="notes">Sometimes, the front end engineer may need to let backend engineers know what API calls are needed.</aside>
@@ -245,7 +251,7 @@
 
 			<section>
 				<h2>Data Flow</h2>
-				<p>In React, data flows one-way, from a parent to child.</p>
+				<p>In React, data flows <span class="yellow">one-way</span>, from a parent to child.</p>
 				<p>Data from an API call is best passed into the parent component to flow to its children, then to grandchildren.</p>
 				<img width="600" src="images/data-flow.jpg" alt="parent-child data flow">
 			</section>
@@ -267,13 +273,13 @@
 				<h2>Data Flow Diagram</h2>
 				<p>Based on the designs and discussion about data flow on the previous slide, consider creating a data flow diagram.</p>
 				<p>A data flow diagram is about tracking how the data is flowing.</p>
-				<img src="images/data-flow-diagram.png" alt="data flow diagram">
+				<img class="fragment" src="images/data-flow-diagram.png" alt="data flow diagram">
 				<aside class="notes">Features section on main page is the parent component that receives data from an API call. The data consists of all feature topics, articles within each topic, comments within each article. The Feature Topics Wrapper is the parent that passes data to each component in it on that page. Feature Topics is a collection with 3 objects. Each Feature Topic component is passing data into each Feature Article component. Then each Feature Article component is passing data into the Comments component.</aside>
 			</section>
 
 			<section>
 				<h2>Engineering Analysis</h2>
-				<p>Let's visit one of the following sites to hypothesize about its directory structure.</p>
+				<p>Let's visit one of the following sites to hypothesize about component structure.</p>
 				<ul>
 					<li><a href="https://www.airbnb.com/" target="_blank">Airbnb</a></li>
 					<li><a href="https://weather.com/" target="_blank">The Weather Channel</a></li>
@@ -283,12 +289,11 @@
 
 			<section>
 				<h2>Data Flow Diagram Exercise</h2>
-				<p>Create a data flow diagram based on a website design.</p>
-				<p>Consider which parts of the following design will likely be dynamic.</p>
-				<img src="images/data-flow-diagram-exercise.png" alt="data flow diagram exercise">
-				<div class="fragment">
-					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
-					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
+				<p>Create a data flow diagram for the website design below.<br>Consider which parts of the design are likely dynamic.</p>
+				<img height="350" src="images/data-flow-exercise.jpg" alt="data flow diagram exercise">
+				<div>
+					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 100px; height: 100px; vertical-align: top;" >
+					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="100px"></a> 
 				</div> 
 			</section>
 
@@ -344,42 +349,46 @@
 
 			<section>
 				<h2>Make sure you have these installed</h2>
-				<p>In the terminal, check your versions for</p>
+				<p>In the terminal, check your versions for:</p>
 				<ul>
-					<li class="fragment">Homebrew</li>
-					<li class="fragment lightgreen">Node</li>
-					<li class="fragment">NPM</li>
-					<li class="fragment lightgreen">Check out <a href="https://treehouse.github.io/installation-guides/mac/node-mac.html"target="_blank">this documentation</a>.</li>
+					<li><a href="https://brew.sh/" target="_blank">Homebrew</a></li>
+					<li class="lightgreen">Node</li>
+					<li>NPM</li>
 				</ul>
+				<p>Check out <a href="https://treehouse.github.io/installation-guides/mac/node-mac.html"target="_blank">this documentation</a>.</p>
 			</section>
 
 			<section>
-				<h2>A note on using codepen.io</h2>
-				<p class="fragment">Sign up for a free <a href="https://codepen.io/" target="_blank">CodePen</a> account.</p>
-				<p class="fragment">In order to practice React, you MUST add 'react' and 'react-dom' to your project.</p>
+				<h2>A note on using CodeSandbox.io</h2>
+				<p>Sign up for a free <a href="https://codesandbox.io/" target="_blank">CodeSandbox</a> account.</p>
+				<p>Then start a project using their React template.</p>
+				<!-- <p class="fragment">In order to practice React in CodePen.io, you MUST add 'react' and 'react-dom' to your project.</p> -->
 			</section>
 
 			<section>
 				<h2>Understanding NPM and Modules</h2>
-                <p class="fragment" >A tool for downloading packages (pre-built code) for your JavaScript projects</p>
-                <p class="fragment" >Can use to install front-end code, add frameworks, and run a server for your project!</p>
+				<p><span class="yellow">NPM</span> means Node Package Manager.</p>
+				<ul>
+                <li class="fragment" >A tool for downloading <span class="yellow">packages</span> (pre-built code) for your JavaScript projects</li>
+                <li class="fragment" >Can use to install front-end code, add frameworks, and run a server for your project!</li>
+				</ul>
                 <p class="fragment" ><a href="https://www.npmjs.com/">Check out the website</a></p>
 			</section>
 
 			<section>
 				<h2>Why use NPM?</h2>
-                <p class="fragment">So much code, so little time! You can add other tools and projects (a calendar widget or CSS framework) without having to write all the code yourself</p>
+                <p class="fragment">So much code, so little time! You can add other tools and projects (a calendar widget or CSS framework) without having to write all the code yourself.</p>
 				<p class="fragment">No longer need script tags!</p>
 			</section>
 
 			<section>
                 <h2>Using NPM</h2>
-                <p>Finding a project online or collaborating</p>
+                <p>Use NPM to find a project online or collaborate.</p>
                 <ul>
-                    <li class="fragment">Clone the project that you want to work on with git (or sourcetree) and make sure it has a package.json</li>
+                    <li class="fragment">Clone the project that you want to work on with git (or Sourcetree) and make sure it has a <span class="aqua">package.json</span> file.</li>
                     <li class="fragment">Then navigate to directory that has the source code.</li>
-                    <li class="fragment">Then type "npm install" in the Terminal. This will load your dependencies.</li>
-                    <li class="fragment">Then run the "npm start" command. This will only work if the program you downloaded has a start script.</li>
+                    <li class="fragment">Then in Terminal, type: <span class="aqua">npm install</span>. This will load your dependencies.</li>
+                    <li class="fragment">Then run the command: <span class="aqua">npm start</span>. This will only work if the program you downloaded has a start script.</li>
                 </ul>
 			</section>
 
@@ -387,9 +396,9 @@
                 <h2>What is a package.json?</h2>
                 <p>A table of contents for your code!</p>
                 <ul>
-                    <li class="fragment">Information on the author and a description of the project</li>
-                    <li class="fragment">Lists all of the packages that this project needs in order to run.</li>
-                    <li class="fragment">Contains the build commands to get your project up and running.</li>
+                    <li class="fragment">Information on the author and a description of the project.</li>
+                    <li class="fragment lightgreen">Lists all packages that the project needs in order to run.</li>
+                    <li class="fragment">Has build commands to get your project up and running.</li>
                 </ul>
 			</section>
 
@@ -398,9 +407,9 @@
                 <p>There is a structure to how developers keep track of the iterations of a package or dependency</p>
                 <p class="fragment">Example: 1.8.3 </p>
                 <ul>
-                    <li class="fragment">1 is the "major version" and if this is updated, it will break currently functionality</li>
-                    <li class="fragment">8 is the "minor version" and usually indicates a new feature has been added but functionality is not changed.</li>
-                    <li class="fragment">3 is a patch or small fix.</li>
+                    <li class="fragment">1 is the "<span class="yellow">major version</span>" and if this is updated, it will break currently functionality</li>
+                    <li class="fragment">8 is the "<span class="yellow">minor version</span>" and usually indicates a new feature has been added but functionality is not changed.</li>
+                    <li class="fragment">3 is a <span class="yellow">patch</span> or small fix.</li>
                 </ul>
             </section>
 
@@ -413,13 +422,13 @@
 
 			<section>
 				<h2>Create React App</h2>
-				<p>Facebook has made a handy tool to jumpstart your React App</p>
-				<p>Check out <a href="https://www.youtube.com/watch?v=397Xlx-Amlo"target="_blank">this</a> video to see all the cool stuff it does to spin up a new React.js app on your local machine in seconds!</p> 
+				<p>Facebook created a handy tool to jumpstart your React App.</p>
+				<p><a href="https://www.youtube.com/watch?v=397Xlx-Amlo"target="_blank">This</a> video shows how to spin up a new React.js app on your local machine in seconds!</p> 
 			</section>
 
 			<section>
 				<h2>Create-React-App</h2>
-				<p>The name of this project will be handle-first-react-app</p>
+				<p>The name of this project will be <span class="aqua">handle-first-react-app</span></p>
 				<p>If this were my project, the commands would be: </p>				
 <pre><code>cd documents/dev
 npx create-react-app cmh-first-react-app
@@ -427,16 +436,16 @@ cd cmh-first-react-app
 npm start
 </code></pre>
 				<p>Now, open your finder and take a look at the folders inside of your new project!</p>
-				<p>For a quick start guide, look to <a href="https://www.notion.so/anniecannons/Creating-React-Project-f6a13ed6bba6426989ee2ce084e32b96" target="_blank">Notion</a></p>
+				<p>For a quick start guide, look to <a href="https://www.notion.so/anniecannons/Creating-React-Project-f6a13ed6bba6426989ee2ce084e32b96" target="_blank">Notion</a>.</p>
 			</section>
 
 			<section>
 				<h2>React Documentation</h2>
 				<ul>
-					<li>React docs are clean and easy to read</li>
-					<li class="lightgreen">Please bookmark <a href="https://reactjs.org/docs/getting-started.html" target="_blank">this</a> link</li>
-					<li>Take 10 minutes and check them out. Be sure to pay attention to the way the docs are organized</li>
-					<li class="lightgreen">What did you notice?</li>
+					<li>React docs are clean and easy to read.</li>
+					<li>Please bookmark <a href="https://reactjs.org/docs/getting-started.html" target="_blank">this</a> link.</li>
+					<li>Explore docs for 10 minutes. Notice its organization.</li>
+					<li>What did you notice?</li>
 					<li>What did you like or dislike?</li>
 				</ul>
 			</section>
@@ -444,7 +453,7 @@ npm start
 			<section>
 				<h2>Folder Structure</h2>
 				<p>Let's take a tour in VS Code!</p>
-				<img src="images/folderstructure.png" alt="React Folder Structure" width="500px">
+				<img src="images/folderstructure.png" alt="React Folder Structure" width="450px">
 			</section>
 
 			<!-- <section>
@@ -466,20 +475,20 @@ npm start
 				<img style="width: 10vw;" src="images/src-folder.png" alt="React src folder contents">
 				<div class="widescreen-monitor-45" style="float: right;">
 					<ul>
-						<li><b>Assets</b> - logo, images, icons</li>
-						<li ><b>Components</b> - all global components (like buttons, cards).</li>
-						<li><b>Data</b> - static information</li>
-						<li ><b>Pages</b> - a folder for each page of design, with all of the needed components inside</li>
+						<li><b class="yellow">Assets</b> - logo, images, icons</li>
+						<li><b class="yellow">Components</b> - all global components (like buttons, cards).</li>
+						<li><b class="yellow">Data</b> - static information</li>
+						<li><b class="yellow">Pages</b> - a folder for each page of design, with all of the needed components inside</li>
 					</ul>
 				</div>
 			</section>
 
 			<section>
 				<h2>Pages Folder Architecture</h2>
-				<p>Within the <b>src</b> folder in <b>Pages</b>, each folder contains at least:</p>
+				<p>Within the <b class="aqua">src</b> folder in <b class="aqua">Pages</b>, each folder contains at least:</p>
 				<img style="width: 10vw;" src="images/pages-folder.png" alt="React Pages folder contents">
 				<ul class="widescreen-monitor-45" style="float:right;">
-					<li>one JS file named after the page contents (e.g., <b>Admin</b> folder has an Admin.js file)</li>
+					<li>one JS file named after the page contents (e.g., <b class="aqua">Admin</b> folder has an <span class="aqua">Admin.js</span> file)</li>
 					<li >possibly another folder of files, pending the dynamic data to display to the user.
 					<br><span style="font-size: 26px">Example: Graphs, Tables, etc. folders with own files/folders.</span></li>
 				</ul>
@@ -498,7 +507,7 @@ npm start
 
 			<section>
 				<h2>Diving into Code!</h2>
-				<p>Let's build a component and discuss how to make it appear (render) and how to add content (JSX)</p>
+				<p>Let's build a component and discuss how to make it appear (render) and how to add content (JSX).</p>
 			</section>
 
 
@@ -518,23 +527,24 @@ const HelloMessage = () => {
 	</div>
   );
 }
-export default HelloMessage
+export default HelloMessage;
 </code></pre>
 			</section>
 
 			<section>
 				<h2>Understanding a Component</h2>
 				<ul>
-					<li class="fragment">React components always have to import the React code to create a compoment with all of the React features.</li>
-					<li class="fragment">The function will always have a return statement.</li>
-					<li class="fragment">The return statement will always be the code that is displayed in the UI.</li>
-					<li class="fragment">An export statement will allow this component to be used by other components.</li>
+					<li class="fragment"><code class="aqua">import</code>: React components must import the React code to create a component with all of the React features.</li>
+					<li class="fragment"><code class="aqua">return</code>: The function will always have a return statement.</li>
+					<ul><li class="fragment">The return statement will always be the code that is displayed in the UI.</li></ul>
+					<li class="fragment"><code class="aqua">export</code>: An export statement allows a component to be used by other components.</li>
 				</ul>
 			</section>
 
 			<section>
 				<h2>Understanding a Component</h2>
-				<p>For now, this component does not have any dynamic data. We will work on creating the UI first (with JSX), and then adding data.</p>
+				<p>For now, this component does not have any dynamic data.</p>
+				<p>We will use JSX to creating the UI first, and then add data.</p>
 			</section>
 
 			<!-- Concepts: JSX -->
@@ -566,14 +576,12 @@ export default HelloMessage
 
 			<section>
 				<h2>Udemy Video: Understanding JSX</h2>
-				<p>Log in to your Udemy for Business account and watch <a href="https://anniecannons.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/25595410#:~:text=31.-,Introducing,-JSX" target="_blank">this</a> short video</p>
+				<p>Watch <a href="https://anniecannons.udemy.com/course/react-the-complete-guide-incl-redux/learn/lecture/25595410#:~:text=31.-,Introducing,-JSX" target="_blank">this</a> short video.</p>
 			</section>
-
-			
 
 			<section>
 				<h2>Exercise: Intro to JSX Elements</h2>
-				<p>Complete the four tasks listed in <a href="https://codesandbox.io/s/intro-to-jsx-elements-8ge1r?file=/src/App.js" target="_blank">this</a> CodePen</p>
+				<p>Complete the four tasks listed in <a href="https://codesandbox.io/s/intro-to-jsx-elements-8ge1r?file=/src/App.js" target="_blank">this</a> CodeSandbox.</p>
 			</section>
 
 			<!-- <section>
@@ -622,8 +630,8 @@ export default HelloMessage
 			<section>
 				<h2>Create a React component</h2>
 				<ol>
-					<li>Go to <a href="http://jsbin.com/gekozos/3/edit?html,css,js,output" target="_blank">http://jsbin.com/gekozos/3/edit?html,css,js,output</a></li>
-					<li>We&rsquo;ll work together to make a component called <code class="inline">UserProfile</code>. It should include:
+					<li>Go to this <a href="https://codesandbox.io/s/userprofile-re2ub?file=/src/App.js" target="_blank">CodeSandbox</a>.</li>
+					<li>Make a <code class="inline aqua">UserProfile</code> component with:
 						<ol>
 							<li>An avatar</li>
 							<li>Your first and last name</li>
@@ -631,7 +639,7 @@ export default HelloMessage
 						</ol>
 					</li>
 				</ol>
-				<p><small>Avatar photo: <code class="inline">https://randomuser.me/api/portraits/thumb/lego/8.jpg</code></small></p>
+				<p><small>Avatar photo: <code class="inline aqua">https://randomuser.me/api/portraits/thumb/lego/8.jpg</code></small></p>
 			</section>
 
 			<!-- Rendering a component -->
@@ -660,10 +668,10 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 			</section>
 
 			<section>
-				<h3>What's Wrong Here?</h3>
-				<p>Exercise</p>
+				<h3>JSX Exercise</h3>
+				<p>What is keeping the UI from appearing?</p>
 				<p>Look at <a href="https://codesandbox.io/s/whats-wrong-jsx-s17ms?file=/src/App.js" target="_blank">this</a> code, solve the error and add a class!</p>
-				<div class="fragment">
+				<div>
 					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
 					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
 				</div> 
@@ -686,13 +694,7 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 					</li>
 					<li>Learn more in the <a href="https://facebook.github.io/react/docs/jsx-in-depth.html" target="_blank">JSX docs</a></li>
 				</ul>
-			</section>
-
-			<section>
-				<h2>JSX Project</h2>
-			</section>
-
-			
+			</section>	
 
 			<section>
 				<h2>Debugging</h2>
@@ -714,7 +716,7 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 			<section>
 				<h2>Props!</h2>
 				<p>A system for passing data between components, from parent to child.</p>
-				<p>Props allow you the chance to display your data into your components in a dynamic way!</p>
+				<p>Props help display data in components in a dynamic way!</p>
 			</section>
 
 			<!-- <section>
@@ -737,10 +739,11 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 			</section>
 
 			<section>
-				<h2>Who's My Parent? Exercise</h2>
-				<p>Download <a href="https://github.com/cm-hart/parent-child-practice" target="_blank">this</a> code</p>
+				<h2>Parent-Child Exercise</h2>
+				<p>Who's my parent? Tell us!</p>
+				<p>Download <a href="https://github.com/cm-hart/parent-child-practice" target="_blank">this</a> code.</p>
 				<p>Instructions are in the comments</p>
-				<div class="fragment">
+				<div>
 					<img src="images/exercise.gif" alt="Exercise Gif" style="width: 150px; height: 150px;" >
 					<a href="https://trello.com/b/RQrD5Ye2" target="_blank"><img src="images/trello-logo-blue.png" alt="Trello Logo" width="200px"></a> 
 				</div> 
