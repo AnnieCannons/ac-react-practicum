@@ -494,7 +494,7 @@
 			<!-- <section>
                 <h2>Global Packages</h2>
 				<p class="fragment">A global package allows that package to be able to create commands that can be used in the command line (like yarn or npm). It can be used across your projectson your computer.</p>
-				<p class="fragment"><code>npm install -g [name-of-package]</code></p>
+				<p class="fragment"><code class="js" data-trim contenteditable>npm install -g [name-of-package]</code></p>
                 <p class="fragment">Command for seeing the global packages on your computer: npm list -g --depth 0 </p>
             </section> -->
 
@@ -508,7 +508,7 @@
 				<h2>Create-React-App</h2>
 				<p>The name of this project will be <span class="aqua">handle-first-react-app</span></p>
 				<p>If this were my project, the commands would be: </p>				
-<pre><code>cd documents/dev
+<pre><code class="js" data-trim contenteditable>cd documents/dev
 npx create-react-app cmh-first-react-app
 cd cmh-first-react-app
 npm start
@@ -615,12 +615,12 @@ npm start
 
 			<section>
 				<h2>A Simple Component</h2>
-<pre><code>import React from 'react';
+<pre><code class="js" data-trim contenteditable>import React from 'react';
 const HelloMessage = () => {
   return (
-	<div>
-	<h1>Hello World!</h1>
-	</div>
+    <div>
+      <h1>Hello World!</h1>
+    </div>
   );
 }
 export default HelloMessage;
