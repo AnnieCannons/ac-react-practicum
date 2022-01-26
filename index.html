@@ -759,7 +759,7 @@ export default HelloMessage;
 					<h2>Getting a component onto the page</h2>
 					<p><code class="inline">ReactDOM.render</code></p>
 					<p>A library method that we will use to place components onto our webpage</p>
-<pre><code class="javascript">
+<pre><code class="javascript" data-trim contenteditable>
 // The ReactDOM library provides an object 'ReactDOM' with a function 'render'
 
 // It needs the component and the target in the DOM
@@ -929,7 +929,7 @@ export default App;
 
 				<section>
 					<h2>Another props example</h2>
-<pre><code class="javascript">// WelcomeText accepts the prop 'name'
+<pre><code class="javascript" data-trim contenteditable>// WelcomeText accepts the prop 'name'
 &lt;WelcomeText name={'Adam'} />
 	
 // WelcomeText component
@@ -1015,13 +1015,13 @@ const WelcomeText = (props) => {
 				<!-- <section>
 					<h2>How to make an object</h2>
 					<p>With an object literal:</p>
-<pre><code class="javascript">var contact0 = {
+<pre><code class="javascript" data-trim contenteditable>var contact0 = {
   firstName: 'Simba',
   lastName: 'The Lion',
   organization: 'Pride Rock'
 };</code></pre>
 					<p>Adding properties:</p>
-<pre><code class="javascript">var contact1 = {};
+<pre><code class="javascript" data-trim contenteditable>var contact1 = {};
 contact1.firstName = 'Pumba';
 contact1.lastName = 'The Warthog';
 contact1['organization'] = 'The Desert';
@@ -1031,7 +1031,7 @@ contact1['organization'] = 'The Desert';
 				<section>
 					<h2>How to make an object</h2>
 					<p>Objects can be nested:</p>
-<pre><code class="javascript">var contact2 = {
+<pre><code class="javascript" data-trim contenteditable>var contact2 = {
   firstName = 'Ariel', 
   lastName = 'The Mermaid',
   organization: {
@@ -1046,11 +1046,11 @@ contact1['organization'] = 'The Desert';
 					<h2>Accessing properties of objects</h2>
 					<p>Two ways:</p>
 					<p>With dot notation:</p>
-<pre><code class="javascript">contact0.firstName;
+<pre><code class="javascript" data-trim contenteditable>contact0.firstName;
 contact1.lastName;
 </code></pre>
 					<p>With square bracket notation:</p>
-<pre><code class="javascript">contact0['firstName'];
+<pre><code class="javascript" data-trim contenteditable>contact0['firstName'];
 contact2['lastName'];
 </code></pre>
 				</section> -->
@@ -1060,7 +1060,7 @@ contact2['lastName'];
 					<h2>Maps and Key/Values</h2>
 					<p>An object is often used as a <span class="blue">map</span>, or a key/value store.</p>
 					<p>These are data structures that are indexed by <span class="blue">keys</span>.</p>
-<pre><code class="javascript">const appData = {
+<pre><code class="javascript" data-trim contenteditable>const appData = {
   users: [{
     name: 'Rihanna',
     id: 2
@@ -1095,7 +1095,7 @@ contact2['lastName'];
 
 				<section>
 					<h2>Using maps</h2>
-<pre><code class="javascript">const WelcomeIndividual = () => {
+<pre><code class="javascript" data-trim contenteditable>const WelcomeIndividual = () => {
   return (
     &lt;li>Hi there {this.props.name}&lt;/li&gt;
   )
@@ -1121,7 +1121,7 @@ const nameArray = ['Harrison', 'Adam', 'Laura'];
 				<section>
 					<h2>Maps</h2>
 					<p><span class="aqua">map()</span> iterates over a list, transforms each member of that list, and returns another list of the same size with the transformed members (example: transforming list of strings to uppercase)</p>
-<pre><code class="javascript">
+<pre><code class="javascript" data-trim contenteditable>
 var array1 = [1, 4, 9, 16];
 // pass a function to map
 const map1 = array1.map(x => x * 2);		
@@ -1134,7 +1134,7 @@ console.log(map1);
 				<!-- <section>
 					<h2>forEach()</h2>
 					<p>forEach() iterates over a list and applies some operation with side effects to each list member (example: saving every list item to the database)</p>
-<pre><code class="javascript">var words = [{name:'one'}, {name:'two'}, {name:'three'}, {name:'four'}];
+<pre><code class="javascript" data-trim contenteditable>var words = [{name:'one'}, {name:'two'}, {name:'three'}, {name:'four'}];
 
 words.forEach(function(word) {
   word.name = "bananas";
@@ -1152,7 +1152,7 @@ console.log(words);
 						<li>A method is a function that is set as the value of a property</li>
 						<li>The <code class="inline">this</code> keyword refers to the enclosing object</li>
 					</ul>
-<pre><code class="javascript">
+<pre><code class="javascript" data-trim contenteditable>
 var currentUser = {
   firstName: 'Sydney',
   middleInitial: 'J',
@@ -1173,7 +1173,7 @@ console.log(currentUser.mI()); // logs 'J'
 				<!-- React props are objects -->
 				<section>
 					<h2>React props === objects</h2>
-<pre><code class="javascript">const Welcome = (props) => {
+<pre><code class="javascript" data-trim contenteditable>const Welcome = (props) => {
   return (
     &lt;p>Welcome {props.firstName} {props.lastName}!&lt;/p>
   );
@@ -1266,7 +1266,7 @@ console.log(currentUser.mI()); // logs 'J'
 						<li class="fragment">A JavaScript object</li>
 						<li class="fragment">A set of key/value pairs that represents the current state (or stored data) of the component.</li>
 					</ul>
-<pre class="fragment"><code class="javascript">var me = {
+<pre class="fragment"><code class="javascript" data-trim contenteditable>var me = {
   mood: 'happy',
   age: 42,
   sleeping: false
@@ -1281,7 +1281,7 @@ console.log(currentUser.mI()); // logs 'J'
 
 				<section>
 					<h2>Let's see it in code:</h2>
-<pre><code class="javascript">const StateOfMatter = (props) => {
+<pre><code class="javascript" data-trim contenteditable>const StateOfMatter = (props) => {
   var stateOfMatter;
   if (props.currentTemp <= 32) {
     stateOfMatter = 'Solid';
@@ -1302,7 +1302,7 @@ console.log(currentUser.mI()); // logs 'J'
 
 				<!-- <section>
 					<h2>Let's see it in code:</h2>
-<pre><code class="javascript">render() {
+<pre><code class="javascript" data-trim contenteditable>render() {
   var stateOfMatter;
   if (this.state.currentTemp <= 32) {
     stateOfMatter = 'Solid';
@@ -1324,7 +1324,7 @@ console.log(currentUser.mI()); // logs 'J'
 				<section>
 					<h2>Where is state stored?</h2>
 					<p>Local state is stored in the component itself! In something call the constructor. It is outside of the render function.</p>
-<pre><code class="javascript">import React from 'react';
+<pre><code class="javascript" data-trim contenteditable>import React from 'react';
 class Temperature extends React.Component{
   constructor(){
    super();
@@ -1341,7 +1341,7 @@ class Temperature extends React.Component{
 
 				<section>
 					<h2>Understanding state syntax</h2>
-<pre><code class="javascript">const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
+<pre><code class="javascript" data-trim contenteditable>const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
 </code></pre>
 					<ol>
 						<li><code class="aqua">useState()</code> is a React Hook that allows us to declare an initial state (props.currentTemp)</li>
@@ -1351,7 +1351,7 @@ class Temperature extends React.Component{
 
 				<section>
 					<h2>Understanding state syntax</h2>
-<pre><code class="javascript">const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
+<pre><code class="javascript" data-trim contenteditable>const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
 </code></pre>
 					<ol>
 						<li>On the left of the equal sign, you can create variables to store the current value of an item in state (<span class="aqua">currentTemp</span>) </li> 
@@ -1361,7 +1361,7 @@ class Temperature extends React.Component{
 				<section>
 					<h2>Where is state stored?</h2>
 					<p>State is stored in the component itself!<br>It is outside of the render function.</p>
-<pre><code class="javascript">import React, { useState } from 'react';
+<pre><code class="javascript" data-trim contenteditable>import React, { useState } from 'react';
 
 const Temperature = (props) => {
   const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
@@ -1388,7 +1388,7 @@ export default Temperature;
 					<h2>How to set the State?</h2>
 					<p>Setting the state means updating the value in state based on user input or the data your app is receiving from a database.</p>
 					<p>When we pass an initial value into <code class="aqua">useState()</code>, it returns a function we can use to update the value in state!</p>
-<!-- <pre><code class="javascript">import React, { useState } from 'react';
+<!-- <pre><code class="javascript" data-trim contenteditable>import React, { useState } from 'react';
 const Temperature = (props) => {
   const [currentTemp,setCurrentTemp] = useState(props.currentTemp);
 }
@@ -1401,7 +1401,7 @@ export default Temperature;
 				<section>
 					<h2>How to Set the State?</h2>
 					<p>Let's assume we have another function of <code class="aqua">increaseTemp()</code> that increments temperature by 15.</p>
-<pre><code class="javascript">import React, { useState } from 'react';
+<pre><code class="javascript" data-trim contenteditable>import React, { useState } from 'react';
 const Temperature = (props) => {
   const [currentTemp,setCurrentTemp] = useState(props.currentTemp);
 
@@ -1416,7 +1416,7 @@ export default Temperature;
 				<section>
 					<h2>How to Set the State?</h2>
 					<p>Let's see the temperature and a button that listens for a click to execute the function of <code class="aqua">increaseTemp()</code>.</p>
-<pre><code class="javascript">import React, { useState } from 'react';
+<pre><code class="javascript" data-trim contenteditable>import React, { useState } from 'react';
 const Temperature = (props) => {
   const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
 
@@ -1437,7 +1437,7 @@ export default Temperature;
 
 				<section>
 					<h2>Child Component</h2>
-<pre><code class="javascript">import React, { useState } from 'react';
+<pre><code class="javascript" data-trim contenteditable>import React, { useState } from 'react';
 
 const Temperature = (props) => {
   const [currentTemp, setCurrentTemp] = useState(props.currentTemp);
@@ -1463,7 +1463,7 @@ export default Temperature;
 
 				<section>
 					<h2>The Parent Component</h2>
-<pre><code class="javascript">import React from 'react';
+<pre><code class="javascript" data-trim contenteditable>import React from 'react';
 import Temperature from './Temperature';
 
 const Parent = () => {
@@ -1484,7 +1484,7 @@ export default Temperature;
 				</section>
 
 				<section>
-<pre><code class="javascript">
+<pre><code class="javascript" data-trim contenteditable>
 class Temperature extends React.Component{
  constructor(){
   super();
@@ -1502,7 +1502,7 @@ increaseTemp(){
 </code></pre>
 </section>
 				<section>
-<pre><code class="javascript">
+<pre><code class="javascript" data-trim contenteditable>
 render() {
   var stateOfMatter;
    if (this.state.temperature <= 32) {
@@ -1570,14 +1570,14 @@ export default Temperature
 						</li>
 					</ul>
 					<p>A presentational child component:</p>
-<!-- <pre><code class="javascript">
+<!-- <pre><code class="javascript" data-trim contenteditable>
 class Welcome extends React.Component{
  render() {
   return (
     &lt;p>Welcome {this.props.firstName} {this.props.lastName}!&lt;/p>
   );
 };</code></pre> -->
-<pre><code class="javascript">import React from 'react';
+<pre><code class="javascript" data-trim contenteditable>import React from 'react';
 const Welcome = (props) => {
   return (
     &lt;p>Welcome {props.firstName} {props.lastName}!&lt;/p>
@@ -1589,7 +1589,7 @@ export default Welcome;
 					
 					<section>
 						<h2>A stateful child component</h2>
-<!-- <pre><code class="javascript">
+<!-- <pre><code class="javascript" data-trim contenteditable>
 class Welcome extends React.Component{
   constructor(props){
    super();
@@ -1606,7 +1606,7 @@ class Welcome extends React.Component{
    );
 }
 })</code></pre> -->
-<pre><code class="javascript">import React, { useState } from 'react';
+<pre><code class="javascript" data-trim contenteditable>import React, { useState } from 'react';
 const Welcome = (props) => {
   const [firstName, setFirstName] = useState(props.firstName);
   const [lastName, setLastName] = useState(props.lastName);
@@ -1797,7 +1797,7 @@ export default Welcome;
 
 				<section>
 					<h2>useEffect() Example</h2>
-<pre><code class="javascript">import React, { useState } from 'react';
+<pre><code class="javascript" data-trim contenteditable>import React, { useState } from 'react';
 
 const ReportComponent = (props) => {
   const [reports, setReports] = useState([]);
@@ -1829,7 +1829,7 @@ export default ReportComponent;
 						<li><span class="yellow">function</span> - code to run after component (re)renders</li>
 						<li><span class="yellow">dependency array</span> - items on which function calls depend</li>
 					</ul>
-<pre><code class="javascript">useEffect(() => {
+<pre><code class="javascript" data-trim contenteditable>useEffect(() => {
   let response = await API.get("project-api", "getreports")
     setReports(response);
   }
@@ -1844,7 +1844,7 @@ useEffect(() => {
 				<!-- Lifecycle example 
 				<section>
 					<h2>Component Lifecycle</h2>
-<pre><code class="javascript">
+<pre><code class="javascript" data-trim contenteditable>
 class MyComponent extends React.Component{
 
 // required
@@ -1866,7 +1866,7 @@ componentWillReceiveProps(nextProps) {
 
 				<section>
 						<h2>Component Lifecycle</h2>
-	<pre><code class="javascript">
+	<pre><code class="javascript" data-trim contenteditable>
 class MyComponent extends React.Component{
 // Updating: Invoked before rendering when new props or state are being received.
 // return true to allow render, return false to prevent
@@ -1984,7 +1984,7 @@ componentWillUnmount() {
 			<p>Example: <code class="aqua">App.css</code> is a sibling of <code class="aqua">App.js</code></p>
 			<div class="fragment">
 				<p>So to import an external CSS file into a JS file:</p>
-	<pre><code class="javascript">//In the App.js file:
+	<pre><code class="javascript" data-trim contenteditable>//In the App.js file:
 import "./App.css";
 	</code></pre>		
 			</div>
@@ -1996,7 +1996,7 @@ import "./App.css";
 			<p><span class="yellow">Internal CSS</span> groups behavior (<span class="aqua">JS</span>) with markup (<span class="aqua">JSX</span>) and styling (<span class="aqua">CSS</span>), which is quite helpful for child components. React component libraries help to apply such styles.</p>
 			<div class="fragment">
 			<p>Example: Material UI library has a <code class="aqua">makeStyles</code> method.</p>
-<pre><code class="javascript">import { makeStyles } from "@material-ui/core/styles";
+<pre><code class="javascript" data-trim contenteditable>import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -2011,7 +2011,7 @@ const useStyles = makeStyles((theme) => ({
 		<section>
 			<h2>Internal CSS in React</h2>
 			<p>After importing and declaring the styles to be used in a component, the next step is to apply the styling to the markup via the <code class="aqua">export</code> and <code class="aqua">return</code>.</p>
-<pre class="fragment"><code class="javascript">export default function [name of function](parameter(s)) {
+<pre class="fragment"><code class="javascript" data-trim contenteditable>export default function [name of function](parameter(s)) {
   const classes = useStyles();
 }
 
@@ -2028,7 +2028,7 @@ return (
 		<section>
 			<h2>Inline CSS in React</h2>
 			<p><span class="yellow">Inline CSS</span> applies styling to a specified JSX element.</p>
-<pre class="fragment"><code class="javascript">//for a to do list:
+<pre class="fragment"><code class="javascript" data-trim contenteditable>//for a to do list:
 function getList({item, isDone}) {
   return (
     &lt;div>
