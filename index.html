@@ -1795,9 +1795,9 @@ export default Welcome;
 					</ul>
 				</section>
 
-				<section>
+				<!-- <section>
 					<h2>useEffect() Example</h2>
-<pre><code class="javascript" data-trim contenteditable>import React, { useState } from 'react';
+<pre><code class="javascript" data-trim contenteditable>import React, { useState, useEffect } from 'react';
 
 const ReportComponent = (props) => {
   const [reports, setReports] = useState([]);
@@ -1839,7 +1839,51 @@ useEffect(() => {
   setTitle("My Title: " + props.title)
 }, [props.title]); // calls useEffect any time props.title changes
 </code></pre>
+				</section> -->
+
+				<section>
+					<h2>useEffect() Example</h2>
+<pre><code class="javascript" data-trim contenteditable>import React, { useState, useEffect } from 'react';
+
+const Lyrics = (props) => {
+  const [lyrics, setLyrics] = useState("");
+
+  useEffect(() => {
+    let response = await fetch(`https://api.lyrics.ovh/v1/${props.artist}/${props.title}`);
+    setLyrics(response);
+  }
+}, []);
+
+  return (
+	  <div>
+	   Lyrics: {lyrics}
+	  </div>
+  );
+}
+export default Lyrics;
+</code></pre>
 				</section>
+
+
+				<section>
+					<h2>useEffect()</h2>
+					<p><code class="aqua">useEffect()</code> can accept two arguments:</p>
+					<ul>
+						<li><span class="yellow">function</span> - code to run after component (re)renders</li>
+						<li><span class="yellow">dependency array</span> - items on which function calls depend</li>
+					</ul>
+<pre><code class="javascript" data-trim contenteditable>useEffect(() => {
+  let response = await fetch(`https://api.lyrics.ovh/v1/${props.artist}/${props.title}`);
+    setLyrics(response);
+  }
+}, []); //Only calls useEffect once
+
+useEffect(() => {
+  setTitle("Song Title: " + props.title)
+}, [props.title]); // calls useEffect any time props.title changes
+</code></pre>
+				</section>
+
 
 				<!-- Lifecycle example 
 				<section>
