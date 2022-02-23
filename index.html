@@ -485,7 +485,7 @@
                 <p>There is a structure to how developers keep track of the iterations of a package or dependency</p>
                 <p class="fragment">Example: 1.8.3 </p>
                 <ul>
-                    <li class="fragment">1 is the "<span class="yellow">major version</span>" and if this is updated, it will break currently functionality</li>
+                    <li class="fragment">1 is the "<span class="yellow">major version</span>" and if this is updated, it will break current functionality</li>
                     <li class="fragment">8 is the "<span class="yellow">minor version</span>" and usually indicates a new feature has been added but functionality is not changed.</li>
                     <li class="fragment">3 is a <span class="yellow">patch</span> or small fix.</li>
                 </ul>
@@ -868,7 +868,7 @@ ReactDOM.render(&lt;MyReactComponent />, document.getElementByID('app'));
 			</section>
 
 			<section>
-				<h2>Parent-Child Exercise</h2>
+				<h2>Parent-Child Components Exercise</h2>
 				<p>Who's my parent? Tell us!</p>
 				<p>Download the .zip for <a href="https://github.com/codexmon/parent-child-practice" target="_blank">this</a> code.</p>
 				<p>Instructions are in the <span class="aqua">README.md</span> file.</p>
@@ -930,7 +930,7 @@ export default App;
 				<section>
 					<h2>Another props example</h2>
 <pre><code class="javascript" data-trim contenteditable>// WelcomeText accepts the prop 'name'
-&lt;WelcomeText name={'Adam'} />
+&lt;WelcomeText name={'Alex'} />
 	
 // WelcomeText component
 const WelcomeText = (props) => {
@@ -942,7 +942,7 @@ const WelcomeText = (props) => {
 // will output
 // &lt;p>Welcome to the class, Adam!&lt;/p>
 </code></pre>
-											
+					<p>See it in <a href="https://codesandbox.io/s/parent-child-props-example-ncrvv" target="_blank">CodeSandbox</a></p>	
 				</section>
 
 				<section>
@@ -1095,9 +1095,9 @@ contact2['lastName'];
 
 				<section>
 					<h2>Using maps</h2>
-<pre><code class="javascript" data-trim contenteditable>const WelcomeIndividual = () => {
+<pre><code class="javascript" data-trim contenteditable>const WelcomeIndividual = (props) => {
   return (
-    &lt;li>Hi there {this.props.name}&lt;/li&gt;
+    &lt;li>Hi there {props.name}&lt;/li&gt;
   )
 };
 const WelcomeList = () => {
@@ -1446,14 +1446,14 @@ const Temperature = (props) => {
     setCurrentTemp(currentTemp + 15);
   }
 
-  var stateOfMatter = (currentTemp <= 32) ? 'Solid' : (currentTemp >= 212) ? 'Gas' : 'Liquid';
+  var stateOfMatter = (currentTemp &lt;= 32) ? 'Solid' : (currentTemp >= 212) ? 'Gas' : 'Liquid';
 
   return (
-    <div>
-      <p>At { currentTemp }°F, water is considered to be a 
-       { stateOfMatter } state of matter.</p>
-      <button onClick={increaseTemp}>Heat It Up!</button>
-    </div>
+    &lt;div>
+      &lt;p>At { currentTemp }°F, water is considered to be a 
+       { stateOfMatter } state of matter.&lt;/p>
+      &lt;button onClick={increaseTemp}>Heat It Up!&lt;/button>
+    &lt;/div>
   );
 }
 
@@ -1472,7 +1472,7 @@ const Parent = () => {
   );
 }
 
-export default Temperature;
+export default Parent;
 </code></pre>
 				</section>
 
