@@ -1851,13 +1851,12 @@ const Lyrics = (props) => {
   useEffect(() => {
     let response = await fetch(`https://api.lyrics.ovh/v1/${props.artist}/${props.title}`);
     setLyrics(response);
-  }
 }, []);
 
   return (
-    <div>
+    &lt;div>
       Lyrics: {lyrics}
-    </div>
+    &lt;/div>
   );
 }
 export default Lyrics;
@@ -1875,7 +1874,6 @@ export default Lyrics;
 <pre><code class="javascript" data-trim contenteditable>useEffect(() => {
   let response = await fetch(`https://api.lyrics.ovh/v1/${props.artist}/${props.title}`);
     setLyrics(response);
-  }
 }, []); //Only calls useEffect once
 
 useEffect(() => {
